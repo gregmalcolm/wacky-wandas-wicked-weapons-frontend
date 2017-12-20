@@ -9,6 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: "/"
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -25,13 +26,11 @@ module.exports = {
     new HtmlWebpackPlugin({
         path: path.resolve(__dirname, 'dist'),
         template: './index.html',
-        title: "Whacky Wanda's Wicked Weapons"
     }),
     new HtmlWebpackPlugin({
         path: path.resolve(__dirname, 'dist'),
         filename: 'weapons.html',
         template: './public/weapons.html',
-        title: "Whacky Wanda's Wicked Weapons - weapons"
     })
   ]
 };
