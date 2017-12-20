@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-    "dev": "webpack-dev-server --content-base public/"
+    "dev": "webpack-dev-server --hot --content-base public/"
   },
   "keywords": [],
   "author": "",

@@ -1,4 +1,4 @@
-import './style.css';
+import '../css/style.css';
 
 var element = document.createElement('div');
 element.innerHTML = "Welcome to Whacky Wanda's Wicked Weapons";
