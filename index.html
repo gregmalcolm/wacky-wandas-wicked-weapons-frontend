@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title><%= htmlWebpackPlugin.options.title %></title>
+    <%= require('html-loader!./src/partials/_head.html') %>
 </head>
-<body>
-  <h1>Wicked</h1>
+<body class="container">
+    <header>
+        <%= require('html-loader!./src/partials/_header.html') %>
+    </header>
+
+    <main>
+        <div>
+            <h1>Whacky Wanda's</h1>
+            <p>Welcome</p>
+        </div>
+    </main>
+
+    <footer>
+        <%= require('html-loader!./src/partials/_footer.html') %>
+    </footer>
 </body>
 </html>
