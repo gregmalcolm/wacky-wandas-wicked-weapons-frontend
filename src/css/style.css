@@ -1,21 +1,61 @@
 body {
-  font-family: Papyrus;
+    font-size: 28px;
+    font-family: helvetica;
+    background-image: url("/images/white-paper-background.jpg");
 }
 
-.header-upper {
-    /*vertical-align: middle;*/
+.header-upper__header {
+    text-align: center;
+    font-family: Papyrus;
+    margin: 10px;
 }
+
 .header-upper__title {
     color: #9d0a0e;
     font-size: 40px;
-    /*padding: 10px;*/
 }
+
 .header-upper__logo-face {
-    width: 10%;
-    height: 10%;
-    /*float: left;*/
-    /*padding: 10px;*/
+    /*width: 185px;*/
+    /*height: 118px;*/
+    width: 135px;
+    height: 90px;
+    vertical-align: middle;
 }
+
 .header-navbar {
-    /*clear: both;*/
+    font-size: 20px;
+}
+
+.header-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.header-navbar li {
+    float: left;
+}
+
+.header-navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.header-navbar li a:hover {
+    background-color: #111;
+    color: #fab7b9;
+}
+
+.slogan {
+    margin: 100px 0;
+    font-size: 28px;
+    font-family: helvetica;
+    text-align: center;
 }
