@@ -31,6 +31,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'weapons.html',
         template: './public/weapons.html',
+    }),
+    new HtmlWebpackPlugin({
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'items.html',
+        template: './public/items.html',
     })
   ]
 };
