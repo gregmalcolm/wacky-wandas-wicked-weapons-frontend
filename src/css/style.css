@@ -4,6 +4,10 @@ body {
     background-image: url("/images/white-paper-background.jpg");
 }
 
+form {
+    margin-bottom: 0;
+}
+
 .header-upper__header {
     text-align: center;
     font-family: Papyrus;
@@ -23,11 +27,11 @@ body {
     vertical-align: middle;
 }
 
-.header-navbar {
+.navbar {
     font-size: 20px;
 }
 
-.header-navbar ul {
+.navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -35,11 +39,7 @@ body {
     background-color: #333;
 }
 
-.header-navbar li {
-    float: left;
-}
-
-.header-navbar li a {
+.navbar li a {
     display: block;
     color: white;
     text-align: center;
@@ -47,10 +47,30 @@ body {
     text-decoration: none;
 }
 
+.navbar li input {
+    display: block;
+    margin: 8px;
+    font-size: 24px;
+    padding: 2px 2px;
+    width: 400px;
+    vertical-align: middle;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+
 /* Change the link color to #111 (black) on hover */
-.header-navbar li a:hover {
+.navbar li a:hover {
     background-color: #111;
     color: #fab7b9;
+}
+
+.navbar__li-buttons {
+    float: left;
+}
+
+.navbar__li-search {
+    float: right;
 }
 
 .slogan {
