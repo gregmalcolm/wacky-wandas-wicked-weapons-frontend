@@ -1,7 +1,7 @@
 {
-  "name": "whacky-wandas-wicked-weapons-frontend",
+  "name": "wacky-wandas-wicked-weapons-frontend",
   "version": "1.0.0",
-  "description": "Whacky Wanda's Wicked Weapons demo",
+  "description": "Wacky Wanda's Wicked Weapons demo",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
