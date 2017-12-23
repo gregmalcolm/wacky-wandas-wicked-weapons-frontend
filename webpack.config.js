@@ -41,16 +41,6 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         template: './index.html',
     }),
-    new HtmlWebpackPlugin({
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'weapons.html',
-        template: './public/weapons.html',
-    }),
-    new HtmlWebpackPlugin({
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'items.html',
-        template: './public/items.html',
-    }),
     new HtmlWebpackExcludeAssetsPlugin()
   ]
 };

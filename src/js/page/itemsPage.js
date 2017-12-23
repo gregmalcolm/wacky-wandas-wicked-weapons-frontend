@@ -1,4 +1,4 @@
-const itemsPage = () => {
-}
+import AppPage from './AppPage.js'
 
-export default itemsPage;
+export default class ItemsPage extends AppPage {
+}

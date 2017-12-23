@@ -1,4 +1,4 @@
-const indexPage = () => {
-}
+import AppPage from './AppPage.js'
 
-export default indexPage;
+export default class IndexPage extends AppPage {
+}

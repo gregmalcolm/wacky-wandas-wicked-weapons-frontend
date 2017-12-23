@@ -35,5 +35,5 @@ const resultTemplate = () => `
             </div>
         </div>
     </li>
-    `
-export default resultTemplate
+    `;
+export default resultTemplate;

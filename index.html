@@ -1,12 +1,11 @@
-<% const templateName = htmlWebpackPlugin.options.filename.split(".")[0] %>
 <head>
     <%= require('html-loader!./src/partials/_head.html') %>
 </head>
-<body class="container" data-template="<%= templateName %>">
+<body class="container">
     <header>
         <%= require('html-loader!./src/partials/_header.html') %>
     </header>
-    <main class="container">
+    <main class="content">
         <div class="information">Discount weapons for discount monster hunters! </div>
     </main>
     <footer>
