@@ -1,4 +1,4 @@
-import pageTemplate from "../templates/weapons/container.html.js";
+import pageTemplate from "../templates/weapons.html.js";
 import resultsTemplate from "../templates/weapons/_result.html.js";
 
 import AppView from "./AppView.js"
