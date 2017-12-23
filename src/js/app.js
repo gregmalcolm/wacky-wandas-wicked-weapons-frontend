@@ -1,18 +1,20 @@
 import '../css/style.css';
-import indexPage from '../js/page/index.js'
-import weaponsPage from '../js/page/weapons.js'
-import itemsPage from '../js/page/items.js'
+import '../css/header.css';
+
+import indexPage from '../js/page/indexPage.js'
+import weaponsPage from '../js/page/weaponsPage.js'
+import itemsPage from '../js/page/itemsPage.js'
 
 const template = document.querySelector("body")
     .getAttribute("data-template");
 
 const pageLoader = () => {
     switch(template) {
-        case "index.html":
+        case "index":
             return indexPage();
-        case "weapons.html":
+        case "weapons":
             return weaponsPage();
-        case "ttems.html":
+        case "items":
             return itemsPage();
     };
     console.error("Unknown page");

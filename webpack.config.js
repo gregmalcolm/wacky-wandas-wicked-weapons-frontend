@@ -2,6 +2,9 @@ var path = require('path');
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
+const createLodashAliases = require('lodash-loader').createLodashAliases
+
 module.exports = {
   entry: './src/js/app.js',
   output: {
@@ -18,8 +21,19 @@ module.exports = {
           fallback: "style-loader",
           use: "css-loader"
         })
+      },
+      {
+        test: /\.js$/,
+        loader: "lodash-loader"
+      },
+      {
+        test: /\.ejs$/,
+        loader: "ejs-html-loader"
       }
     ]
+  },
+  resolve: {
+    alias: createLodashAliases()
   },
   plugins: [
     new ExtractTextPlugin("css/styles.css"),
@@ -36,6 +50,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'items.html',
         template: './public/items.html',
-    })
+    }),
+    new HtmlWebpackExcludeAssetsPlugin()
   ]
 };

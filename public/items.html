@@ -1,7 +1,8 @@
+<% const templateName = htmlWebpackPlugin.options.filename.split(".")[0] %>
 <head>
     <%= require('html-loader!../src/partials/_head.html') %>
 </head>
-<body class="container">
+<body class="container" data-template="<%= templateName %>">
     <header>
         <%= require('html-loader!../src/partials/_header.html') %>
     </header>

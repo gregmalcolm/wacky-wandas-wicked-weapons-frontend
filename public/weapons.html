@@ -1,50 +1,13 @@
+<% const templateName = htmlWebpackPlugin.options.filename.split(".")[0] %>
 <head>
     <%= require('html-loader!../src/partials/_head.html') %>
 </head>
-<body class="container" data-template="<%= htmlWebpackPlugin.options.filename %>">
+<body class="container" data-template="<%= templateName %>">
     <header>
         <%= require('html-loader!../src/partials/_header.html') %>
     </header>
     <main class="container">
-        <div class="information">Rustling up merchandise...</div>
-        <ul class="weapons-list">
-            <li data-id="1">
-                <div class="search-result">
-                    <div class="search-result__image-column">
-                        <a href="#">
-                            <img src="/images/weapons/axe1.jpeg" alt="axe">
-                        </a>
-                    </div>
-                    <div class="search-result__details-column">
-                        <a href="#">
-                            <h3 result-details__title>
-                                Axe, throwing
-                            </h3>
-                        </a>
-                        <div class="result_details__info">
-                            <div class="result_details_info__main_column">
-                                <div class="results_details__info__cost">
-                                    8 gold pieces
-                                </div>
-                                <dl class="result_details__info__specifics">
-                                    <dt>Damage</dt>
-                                    <dd>1d4</dd>
-                                    
-                                    <dt>Range</dt>
-                                    <dd>10 Feet</dd>
-                                    
-                                    <dt>Weight</dt>
-                                    <dd>2 pounds</dd>
-                                </dl>
-                            </div>
-                            <div class="results_details__info__purchase_column">
-                                <button>Buy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <ul class="weapons-list"></ul>
     </main>
     <footer>
         <%= require('html-loader!../src/partials/_footer.html') %>

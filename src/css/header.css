@@ -1,0 +1,67 @@
+.header-upper__header {
+    text-align: center;
+    font-family: Papyrus;
+    margin: 10px;
+}
+
+.header-upper__title {
+    color: #9d0a0e;
+    font-size: 40px;
+}
+
+.header-upper__logo-face {
+    /*width: 185px;*/
+    /*height: 118px;*/
+    width: 135px;
+    height: 90px;
+    vertical-align: middle;
+}
+
+.navbar {
+    font-size: 20px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li input {
+    display: block;
+    margin: 8px;
+    font-size: 24px;
+    padding: 2px 2px;
+    width: 400px;
+    vertical-align: middle;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+/* Change the link color to #111 (black) on hover */
+.navbar li a:hover {
+    background-color: #111;
+    color: #fab7b9;
+}
+
+.navbar__li-buttons {
+    float: left;
+}
+
+.navbar__li-search {
+    float: right;
+}
+
+.column {
+    display: inline-block;
+}
