@@ -6,8 +6,9 @@
 
 .search-result {
     list-style-type: none;
-    padding-bottom: 20px;
-    max-width: 600px;
+    padding-bottom: 80px;
+    max-width: 300px;
+    text-align: center;
 }
 
 .search-result__image-column {
@@ -21,6 +22,7 @@
 .search-result__image {
     width: 220px;
     height: 220px;
+    box-shadow: -1px 1px 1px 1px #ccc;
 }
 
 .result-details__title {
@@ -37,26 +39,42 @@
     font-size: 14px;
 }
 
-.result_details__info__specifics dl {
-  width: 100%;
-  overflow: hidden;
-  /*background: #ff0;*/
-  padding: 0;
-  margin: 0
+.result_details__info__specifics {
+    width: 100%;
+    overflow: hidden;
+    /*padding: 0 44px 0;*/
+    margin: 20px 44px;
+    text-align: left;
 }
 
 .result_details__info__specifics dt {
-  float: left;
-  width: 50%;
-  /*background: #cc0;*/
-  padding: 0;
-  margin: 0
+    float: left;
+    width: 50%;
+    padding: 0;
+    margin: 0
 }
 
 .result_details__info__specifics dd {
-  float: left;
-  width: 50%;
-  /*background: #dd0;*/
-  padding: 0;
-  margin: 0
+    float: left;
+    width: 50%;
+    padding: 0;
+    margin: 0
 }
+
+.buy-button {
+    border-radius:5px;
+    background-color: #9d0a0e;
+    color:white;
+    font-size: 36px;
+    transition-duration: 0.4s;
+}
+
+.buy-button:hover {
+    background-color:#ff0303;
+    color:white;
+}
+
+.buy-button:focus {
+    outline:0;
+}
+

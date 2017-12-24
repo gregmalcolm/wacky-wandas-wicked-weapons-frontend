@@ -12,6 +12,10 @@ h3 {
     font-size: 30px;
 }
 
+button {
+    cursor: pointer;
+}
+
 .information {
     margin: 100px 0;
     font-size: 28px;
