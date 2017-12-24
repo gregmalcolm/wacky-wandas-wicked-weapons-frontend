@@ -7,28 +7,25 @@ const resultTemplate = () => `
                 </a>
             </div>
             <div class="search-result__details-column column">
-                <a href="#">
-                    <h3 result-details__title>
+                <a class="result-details__title" href="#">
+                    <h3 class="result-details__title-header">
                         Axe, throwing
                     </h3>
                 </a>
-                <div class="result_details__info col">
+                <div class="result_details__info column">
                     <div class="result_details_info__main_column column">
-                        <div class="results_details__info__cost">
-                            8 gold pieces
-                        </div>
                         <dl class="result_details__info__specifics">
+                            <dt>Costs</dd>
+                            <dd>8 <span class="gold-pieces">gp</span>
                             <dt>Damage</dt>
                             <dd>1d4</dd>
 
                             <dt>Range</dt>
-                            <dd>10 Feet</dd>
+                            <dd>10 Ft</dd>
 
                             <dt>Weight</dt>
-                            <dd>2 pounds</dd>
+                            <dd>2 lb</dd>
                         </dl>
-                    </div>
-                    <div class="results_details__info__purchase_column column">
                         <button>Buy</button>
                     </div>
                 </div>

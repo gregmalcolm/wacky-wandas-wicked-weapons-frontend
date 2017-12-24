@@ -21,6 +21,10 @@ export default class WeaponsView extends BaseView {
         weaponsListEl.innerHTML = resultsTemplate()
             + resultsTemplate()
             + resultsTemplate()
+            + resultsTemplate()
+            + resultsTemplate()
+            + resultsTemplate()
+            + resultsTemplate()
             + resultsTemplate();
     }
 }

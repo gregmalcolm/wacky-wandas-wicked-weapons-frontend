@@ -8,9 +8,25 @@ form {
     margin-bottom: 0;
 }
 
+h3 {
+    font-size: 30px;
+}
+
 .information {
     margin: 100px 0;
     font-size: 28px;
     font-family: helvetica;
     text-align: center;
+}
+
+.gold-pieces {
+    color: #bfa61f;
+}
+
+.silver-pieces {
+    color: #888;
+}
+
+.bronze-peices {
+    color: #cd7f32 
 }

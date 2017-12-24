@@ -1,8 +1,62 @@
-.search-result {
-    list-style-type: none;
+.weapons-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.search-result__image: {
-    width: 200px;
-    height: 200px;
+.search-result {
+    list-style-type: none;
+    padding-bottom: 20px;
+    max-width: 600px;
+}
+
+.search-result__image-column {
+    vertical-align: top;
+}
+
+.search-result__details-column {
+    max-width: 300px;
+}
+
+.search-result__image {
+    width: 220px;
+    height: 220px;
+}
+
+.result-details__title {
+    text-decoration: none;
+}
+
+.result-details__title-header {
+    color: #ff050e;
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+.result-details__info__cost {
+    font-size: 14px;
+}
+
+.result_details__info__specifics dl {
+  width: 100%;
+  overflow: hidden;
+  /*background: #ff0;*/
+  padding: 0;
+  margin: 0
+}
+
+.result_details__info__specifics dt {
+  float: left;
+  width: 50%;
+  /*background: #cc0;*/
+  padding: 0;
+  margin: 0
+}
+
+.result_details__info__specifics dd {
+  float: left;
+  width: 50%;
+  /*background: #dd0;*/
+  padding: 0;
+  margin: 0
 }
