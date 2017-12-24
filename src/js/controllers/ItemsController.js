@@ -1,4 +1,5 @@
-import AppController from "./AppController.js"
-
-export default class ItemsController extends AppController {
+export default class ItemsController {
+    constructor(router) {
+        this.router = router;
+    }
 }

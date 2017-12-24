@@ -1,12 +1,16 @@
-import AppPage from './AppPage.js'
 import ItemsController from "../Controllers/ItemsController.js"
 import ItemsView from "../views/ItemsView.js"
 
-export default class ItemsPage extends AppPage {
-    transition() {
-        const controller = new ItemsController()
-        const view = new ItemsView(controller);
+export default class ItemsPage {
+    constructor(router) {
+        this.controller = new ItemsController(router);
+        this.view = new ItemsView(this.controller);
 
-        view.render();
+        window.app.controllers.items = this.controller;
+        window.app.views.items = this.view;
+    }
+
+    transition() {
+        this.view.render();
     }
 }

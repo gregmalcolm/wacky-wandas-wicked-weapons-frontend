@@ -1,6 +1,6 @@
 const resultTemplate = () => `
-    <li data-id="1">
-        <div class="search-result">
+    <li class="search-result" data-id="1">
+        <div class="search-result-item">
             <div class="search-result__image-column column">
                 <a href="#">
                     <img class="search-result__image" src="/images/weapons/axe1.jpeg" alt="axe">

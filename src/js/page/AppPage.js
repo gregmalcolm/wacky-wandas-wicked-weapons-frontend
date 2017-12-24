@@ -2,10 +2,11 @@ import AppController from '../Controllers/AppController.js'
 import AppView from '../views/AppView.js'
 
 export default class AppPage {
-    transition() {
-        const controller = new AppController();
-        const view = new AppView(controller);
+    constructor(router) {
+        this.controller = new AppController(router);
+        this.view = new AppView(this.controller);
 
-        view.render();
+        window.app.controllers.app = this.controller;
+        window.app.views.app = this.view;
     }
 }

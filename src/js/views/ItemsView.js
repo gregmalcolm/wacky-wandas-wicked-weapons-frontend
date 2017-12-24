@@ -1,11 +1,12 @@
 import pageTemplate from "../templates/items.html.js";
 
-import AppView from "./AppView.js"
+import BaseView from "./BaseView.js"
 
-export default class ItemsView extends AppView {
+export default class ItemsView extends BaseView {
     constructor(controller) {
         super(controller);
 
         this.template = pageTemplate();
     }
+
 }

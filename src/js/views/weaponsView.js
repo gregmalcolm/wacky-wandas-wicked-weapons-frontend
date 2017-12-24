@@ -1,13 +1,16 @@
 import pageTemplate from "../templates/weapons.html.js";
 import resultsTemplate from "../templates/weapons/_result.html.js";
 
-import AppView from "./AppView.js"
+import BaseView from "./BaseView.js"
 
-export default class WeaponsView extends AppView {
+export default class WeaponsView extends BaseView {
     constructor(controller) {
         super(controller);
 
         this.template = pageTemplate();
+    }
+
+    registerEvents() {
     }
 
     render() {

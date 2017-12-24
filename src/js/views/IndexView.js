@@ -1,8 +1,8 @@
 import pageTemplate from "../templates/index.html.js";
 
-import AppView from "./AppView.js"
+import BaseView from "./BaseView.js"
 
-export default class IndexView extends AppView {
+export default class IndexView extends BaseView {
     constructor(controller) {
         super(controller);
 

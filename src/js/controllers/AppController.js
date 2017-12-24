@@ -1,11 +1,15 @@
 import Router from '../Router.js'
 
 export default class AppController {
-    transition(oldUrl, newUrl) {
-        new Router().transition(oldUrl, newUrl);
+    constructor(router) {
+        this.router = router;
     }
 
-    weaponsSearch(query) {
-        new Router().routeTo("/weapons", query);
+    transition(oldUrl, newUrl) {
+        this.router.tryTransition(oldUrl, newUrl);
+    }
+
+    weaponsSearch(params) {
+        this.router.transitionTo("/weapons", params);
     }
 }

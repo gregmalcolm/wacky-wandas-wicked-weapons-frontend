@@ -1,4 +1,5 @@
-import AppController from "./AppController.js"
-
-export default class WeaponsController extends AppController {
+export default class WeaponsController  {
+    constructor(router) {
+        this.router = router;
+    }
 }

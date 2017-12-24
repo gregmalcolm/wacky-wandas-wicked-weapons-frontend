@@ -1,12 +1,16 @@
-import AppPage from './AppPage.js'
 import IndexController from "../Controllers/IndexController.js"
 import IndexView from "../views/IndexView.js"
 
-export default class IndexPage extends AppPage {
-    transition() {
-        const controller = new IndexController()
-        const view = new IndexView(controller);
+export default class IndexPage {
+    constructor(router) {
+        this.controller = new IndexController(router);
+        this.view = new IndexView(this.controller);
 
-        view.render();
+        window.app.controllers.index = this.controller;
+        window.app.views.index = this.view;
+    }
+
+    transition() {
+        this.view.render();
     }
 }

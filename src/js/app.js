@@ -3,6 +3,14 @@ import '../css/header.css';
 
 import Router from './Router.js'
 
-const router = new Router();
-router.routeTo(window.location.hash);
+window.app = {
+    router: null,
+    pages: {},
+    views: {},
+    controllers: {},
+    models: {},
+};
+app.router = new Router();
+
+app.router.routeTo(window.location.hash);
 
