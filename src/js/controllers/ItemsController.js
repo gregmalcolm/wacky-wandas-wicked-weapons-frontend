@@ -1,5 +1,4 @@
-export default class ItemsController {
-    constructor(router) {
-        this.router = router;
-    }
+import BaseController from './BaseController.js'
+
+export default class ItemsController extends BaseController {
 }

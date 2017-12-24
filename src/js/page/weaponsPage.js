@@ -12,10 +12,11 @@ export default class WeaponsPage {
         window.app.views.weapons = this.view;
     }
 
-    transition(query) {
+    transition(params) {
         const controller = new WeaponsController()
         const view = new WeaponsView(controller);
 
         view.render();
+        controller.fetchWeapons(params);
     }
 }

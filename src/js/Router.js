@@ -19,7 +19,7 @@ export default class Router {
         const path = this._extractPath(route);
 
         const page = this._findPage(path);
-        page.transition(params);
+        page.transition(params || "");
     }
 
     transitionTo(route, params) {

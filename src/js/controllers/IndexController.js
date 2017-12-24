@@ -1,5 +1,4 @@
-export default class IndexController {
-    constructor(router) {
-        this.router = router;
-    }
+import BaseController from './BaseController.js'
+
+export default class IndexController extends BaseController {
 }

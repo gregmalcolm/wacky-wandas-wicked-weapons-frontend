@@ -1,10 +1,6 @@
-import Router from '../Router.js'
+import BaseController from './BaseController.js'
 
-export default class AppController {
-    constructor(router) {
-        this.router = router;
-    }
-
+export default class AppController extends BaseController {
     transition(oldUrl, newUrl) {
         this.router.tryTransition(oldUrl, newUrl);
     }
