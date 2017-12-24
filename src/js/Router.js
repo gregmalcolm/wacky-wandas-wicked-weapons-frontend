@@ -3,11 +3,11 @@ import WeaponsPage from './page/WeaponsPage.js'
 import ItemsPage from './page/ItemsPage.js'
 
 export default class Router {
-    routeTo(route) {
+    routeTo(route, query) {
         const path = this._extractPath(route);
 
         const page = this._findPage(path);
-        page.transition();
+        page.transition(query);
     }
 
     transition(oldUrl, newUrl) {

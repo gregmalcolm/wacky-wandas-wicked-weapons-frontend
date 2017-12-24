@@ -5,7 +5,7 @@ import WeaponsEvents from "../viewEvents/WeaponsEvents.js"
 import WeaponsView from "../views/WeaponsView.js"
 
 export default class WeaponsPage extends AppPage {
-    transition() {
+    transition(query) {
         const events = new WeaponsEvents()
         const view = new WeaponsView(events);
 
