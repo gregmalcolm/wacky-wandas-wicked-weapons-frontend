@@ -1,10 +1,10 @@
-import AppEvents from '../viewEvents/AppEvents.js'
+import AppController from '../Controllers/AppController.js'
 import AppView from '../views/AppView.js'
 
 export default class AppPage {
     transition() {
-        const events = new AppEvents();
-        const view = new AppView(events);
+        const controller = new AppController();
+        const view = new AppView(controller);
 
         view.render();
     }

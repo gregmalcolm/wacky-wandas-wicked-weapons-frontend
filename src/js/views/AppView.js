@@ -1,20 +1,20 @@
 export default class AppView {
-    constructor(events) {
+    constructor(controller) {
         this.template = "";
 
-        this.events = events;
+        this.controller = controller;
         this.registerEvents();
     }
 
     registerEvents() {
 	    window.addEventListener("hashchange", (e) => {
-            this.events.transition(e.oldURL, e.newURL);
+            this.controller.transition(e.oldURL, e.newURL);
         });
 
         this._registerEvent(".weapons-search", "submit", (e) => {
             e.preventDefault();
             const inputEl = e.currentTarget.querySelector(".weapons-search__input");
-            this.events.weaponsSearch(inputEl.value);
+            this.controller.weaponsSearch(inputEl.value);
         });
     }
 

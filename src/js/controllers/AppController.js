@@ -1,6 +1,6 @@
 import Router from '../Router.js'
 
-export default class AppEvents {
+export default class AppController {
     transition(oldUrl, newUrl) {
         new Router().transition(oldUrl, newUrl);
     }

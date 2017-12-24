@@ -4,8 +4,8 @@ import resultsTemplate from "../templates/weapons/_result.html.js";
 import AppView from "./AppView.js"
 
 export default class WeaponsView extends AppView {
-    constructor(events) {
-        super(events);
+    constructor(controller) {
+        super(controller);
 
         this.template = pageTemplate();
     }
