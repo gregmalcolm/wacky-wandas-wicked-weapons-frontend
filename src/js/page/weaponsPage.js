@@ -1,22 +1,24 @@
-import "../../css/weapons.css"
+import '../../css/weapons.css';
 
-import WeaponsController from "../Controllers/WeaponsController.js"
-import WeaponsView from "../views/WeaponsView.js"
+import BasePage from './BasePage.js';
+import WeaponsController from '../Controllers/WeaponsController.js';
+import WeaponsView from '../views/WeaponsView.js';
+import WeaponsCollection from '../models/WeaponsCollection.js';
 
-export default class WeaponsPage {
+export default class WeaponsPage extends BasePage {
     constructor(router) {
+        super();
+
         this.controller = new WeaponsController(router);
         this.view = new WeaponsView(this.controller);
+        this.model = new WeaponsCollection(this.view);
+        this.controller.model = this.model;
 
-        window.app.controllers.weapons = this.controller;
-        window.app.views.weapons = this.view;
+        this.updateApp();
     }
 
     transition(params) {
-        const controller = new WeaponsController()
-        const view = new WeaponsView(controller);
-
-        view.render();
-        controller.fetchWeapons(params);
+        this.view.render();
+        this.controller.fetchWeapons(params);
     }
 }

@@ -35,6 +35,20 @@ module.exports = {
   resolve: {
     alias: createLodashAliases()
   },
+  devServer: {
+    contentBase: path.join(__dirname, "public"),
+    compress: false,
+    port: 9000,
+    watchOptions: {
+        poll: true
+    },
+    proxy: {
+      "/api": {
+        target: "http://localhost:4000",
+        pathRewrite: {"^/api" : ""}
+      }
+    }
+  },
   plugins: [
     new ExtractTextPlugin("css/styles.css"),
     new HtmlWebpackPlugin({

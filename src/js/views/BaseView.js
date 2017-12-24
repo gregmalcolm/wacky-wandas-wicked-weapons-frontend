@@ -8,6 +8,9 @@ export default class AppView {
     registerEvents() {
     }
 
+    modelChanged(event, args) {
+    }
+
     render() {
         const contentEl = document.querySelector(".content");
         contentEl.innerHTML = this.template;

@@ -5,7 +5,8 @@ export default class AppController extends BaseController {
         this.router.tryTransition(oldUrl, newUrl);
     }
 
-    weaponsSearch(params) {
-        this.router.transitionTo("/weapons", params);
+    weaponsSearch(query) {
+        const params = query || "";
+        this.router.transitionTo("/weapons", `q=${params}`);
     }
 }

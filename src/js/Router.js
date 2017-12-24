@@ -16,10 +16,14 @@ export default class Router {
     }
 
     routeTo(route, params) {
-        const path = this._extractPath(route);
+        const page = this._findPage(route);
+        page.transition(params);
+    }
 
-        const page = this._findPage(path);
-        page.transition(params || "");
+    routeToUrl(url) {
+        const route = this._extractRoute(url);
+        const params = this._extractParamsObject(url);
+        this.routeTo(route, params);
     }
 
     transitionTo(route, params) {
@@ -27,10 +31,15 @@ export default class Router {
     }
 
     tryTransition(oldUrl, newUrl) {
-        const oldPath = this._extractPath(oldUrl);
-        const newPath = this._extractPath(newUrl);
-        if (oldPath !== newPath) {
-            this.routeTo(newUrl)
+        const oldPath = this._extractRoute(oldUrl);
+        const newPath = this._extractRoute(newUrl);
+        const paramsObject =  this._extractParamsObject(newUrl);
+        if (newPath !== oldPath) {
+            this.routeTo(newUrl, params)
+        } else if (newUrl !== oldUrl){
+            if (page) {
+                page.controller.paramsChange(paramsObject);
+            }
         }
     }
 
@@ -47,12 +56,31 @@ export default class Router {
         }
     }
 
-    _extractPath(route) {
-        if (route) {
-            const path = route
+    _extractRoute(url) {
+        if (url) {
+            const path = url
                 .replace(/.*#([^?]*).*/,"$1")
                 .replace(/\/$/, "");
             return path;
         }
+    }
+
+    _extractParamsObject(url) {
+        if (url) {
+            const paramsString = url.replace(/.*\?(.*)/,"$1") || "";
+            return this._paramsAsObject(paramsString);
+        } else {
+            return {};
+        }
+    }
+
+    _paramsAsObject(paramsString) {
+        return paramsString
+            .split("&")
+            .reduce((acc, item)=>{
+                const kv=item.split("=");
+                acc[kv[0]]=kv[1];
+                return acc;
+            }, {});
     }
 }
