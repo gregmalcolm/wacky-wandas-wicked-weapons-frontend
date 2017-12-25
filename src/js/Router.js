@@ -59,10 +59,14 @@ export default class Router {
 
     _extractRoute(url) {
         if (url) {
-            const route = url
-                .replace(/.*#([^?]*).*/,"$1")
-                .replace(/\/$/, "");
-            return route;
+            if (url.search("#") >= 0) {
+                const route = url
+                    .replace(/.*#([^?]*).*/,"$1")
+                    .replace(/\/$/, "");
+                return route;
+            } else {
+                return "";
+            }
         }
     }
 

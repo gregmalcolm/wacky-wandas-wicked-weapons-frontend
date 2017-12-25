@@ -1,12 +1,12 @@
-const resultTemplate = () => `
-    <li class="search-result" data-id="1">
+const resultTemplate = (model) => `
+    <li class="search-result" data-id="${model.id}">
         <a class="result-details__title" href="#">
             <h3 class="result-details__title-header">
-                Axe, throwing
+                ${model.name}
             </h3>
         </a>
         <a href="#">
-            <img class="search-result__image" src="/images/weapons/axe1.jpeg" alt="axe">
+            <img class="search-result__image" src="${model.imageUrl}" alt="${model.name}">
         </a>
         <dl class="result_details__info__specifics">
             <dt>Costs:</dd>

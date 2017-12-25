@@ -12,5 +12,5 @@ window.app = {
 };
 app.router = new Router();
 
-app.router.routeToUrl(window.location.hash);
+app.router.routeToUrl(window.location.href);
 

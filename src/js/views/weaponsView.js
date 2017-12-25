@@ -27,7 +27,7 @@ export default class WeaponsView extends BaseView {
 
     _renderWeapons(weapons) {
         const html = weapons.reduce((acc, weapon) => {
-            acc = acc + resultsTemplate();
+            acc = acc + resultsTemplate(weapon);
             return acc;
         }, "");
 
