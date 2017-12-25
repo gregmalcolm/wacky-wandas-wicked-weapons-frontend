@@ -1,25 +1,25 @@
-const resultTemplate = (model) => `
-    <li class="search-result" data-id="${model.id}">
+const resultTemplate = (weapon) => `
+    <li class="search-result" data-id="${weapon.id}">
         <div class="search-details">
             <a class="result-details__title" href="#">
                 <h3 class="result-details__title-header">
-                    ${model.name}
+                    ${weapon.name}
                 </h3>
             </a>
             <a href="#">
-                <img class="search-result__image" src="${model.imageUrl}" alt="${model.name}">
+                <img class="search-result__image" src="${weapon.getImageUrl()}" alt="${weapon.name}">
             </a>
             <dl class="result_details__info__specifics">
                 <dt>Costs:</dd>
-                <dd>8 <span class="gold-pieces">gp</span>
+                <dd>${weapon.getCostInCoins()} <span class="currency-${weapon.getCostCurrency()}">${weapon.getCostCurrency()}</span>
                 <dt>Damage:</dt>
-                <dd>1d4</dd>
+                <dd>${weapon.damage}</dd>
 
                 <dt>Range:</dt>
-                <dd>10 Ft</dd>
+                <dd>${weapon.getRange()}</dd>
 
                 <dt>Weight:</dt>
-                <dd>2 lb</dd>
+                <dd>${weapon.weight} lb</dd>
             </dl>
             <button class="buy-button" type="button">Buy!</button>
         </div>

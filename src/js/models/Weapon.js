@@ -9,6 +9,7 @@ export default class Weapon extends Model {
         this._name = attr.name;
         this._category = attr.category;
         this._subcategory = attr.subcategory;
+        this._cost = attr.cost;
         this._damage = attr.damage;
         this._range = attr.range;
         this._weight = attr.weight;
@@ -23,11 +24,43 @@ export default class Weapon extends Model {
         return this._name;
     }
 
-    get imageUrl() {
+    get damage() {
+        return this._damage;
+    }
+
+    get weight() {
+        return this._weight;
+    }
+
+    getRange() {
+        return this._range ? `${this._range} lb` : "-"
+    }
+
+    getImageUrl() {
         if (this._imageUrl) {
             return this._imageUrl;
         } else {
             return this._placeholderImageUrl();
+        }
+    }
+
+    getCostInCoins() {
+        if (this._cost >= 100) {
+            return this._cost/100;
+        } else if (this.cost >= 10){
+            return this._cost/10;
+        } else {
+            return this._cost;
+        }
+    }
+
+    getCostCurrency() {
+        if (this._cost >= 100) {
+            return "gp";
+        } else if (this.cost >= 10){
+            return "sp";
+        } else {
+            return "cp";
         }
     }
 

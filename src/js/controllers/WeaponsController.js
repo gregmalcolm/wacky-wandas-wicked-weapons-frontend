@@ -3,6 +3,7 @@ import BaseController from './BaseController.js'
 export default class WeaponsController extends BaseController {
     paramsChange(params) {
         super.paramsChange(params);
+        this.fetchWeapons(params);
     }
 
     fetchWeapons(params) {

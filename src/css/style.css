@@ -23,14 +23,14 @@ button {
     text-align: center;
 }
 
-.gold-pieces {
+.currency-gp {
     color: #bfa61f;
 }
 
-.silver-pieces {
+.currency-sp {
     color: #888;
 }
 
-.bronze-peices {
+.currency-cp {
     color: #cd7f32 
 }

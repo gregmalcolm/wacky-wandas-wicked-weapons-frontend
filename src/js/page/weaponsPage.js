@@ -19,6 +19,6 @@ export default class WeaponsPage extends BasePage {
 
     transition(params) {
         this.view.render();
-        this.controller.fetchWeapons(params);
+        this.controller.paramsChange(params);
     }
 }

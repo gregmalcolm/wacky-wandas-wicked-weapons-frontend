@@ -6,7 +6,6 @@
 
 .search-result {
     list-style-type: none;
-    padding-bottom: 80px;
     max-width: 300px;
     text-align: center;
 }
@@ -30,7 +29,6 @@
 .search-result__image {
     width: 220px;
     height: 220px;
-    /*box-shadow: -1px 1px 1px 1px #ccc;*/
 }
 
 .result-details__title {
