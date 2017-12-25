@@ -11,6 +11,14 @@
     text-align: center;
 }
 
+.search-details {
+    background-color: white;
+    margin: 20px;
+    min-height: 540px;
+    box-shadow: -1px 1px 1px 1px #ccc;
+    border-radius:3px;
+}
+
 .search-result__image-column {
     vertical-align: top;
 }
@@ -22,7 +30,7 @@
 .search-result__image {
     width: 220px;
     height: 220px;
-    box-shadow: -1px 1px 1px 1px #ccc;
+    /*box-shadow: -1px 1px 1px 1px #ccc;*/
 }
 
 .result-details__title {
@@ -30,9 +38,11 @@
 }
 
 .result-details__title-header {
-    color: #ff050e;
+    color: #9d0a0e;
     margin-top: 0;
     margin-bottom: 4px;
+    padding-top: 20px;
+    height: 60px;
 }
 
 .result-details__info__cost {
