@@ -1,17 +1,12 @@
 import Weapon from './Weapon.js';
 import Collection from './Collection.js';
 
-export default class WeaponsCollection {
+export default class WeaponsCollection extends Collection {
     addJsonItems(data) {
         this.items = data.map((json) => {
-            console.log(json);
-            debugger;
-            const attributes = {
-                id: json.id,
-                ...json.attributes
-            };
+            const attributes = Object.assign({id: json.id}, json.attributes)
             return new Weapon(attributes);
         });
-        this.notifyView("itemsChanged", items);
+        this.notifyView("itemsChanged", this.items);
     }
 }

@@ -5,6 +5,7 @@ import ItemsPage from './page/ItemsPage.js'
 
 export default class Router {
     constructor() {
+        this.page = null;
         this.pages = {};
 
         this.pages.app = new AppPage(this);
@@ -16,8 +17,8 @@ export default class Router {
     }
 
     routeTo(route, params) {
-        const page = this._findPage(route);
-        page.transition(params);
+        this.page = this._findPage(route);
+        this.page.transition(params);
     }
 
     routeToUrl(url) {
@@ -31,20 +32,20 @@ export default class Router {
     }
 
     tryTransition(oldUrl, newUrl) {
-        const oldPath = this._extractRoute(oldUrl);
-        const newPath = this._extractRoute(newUrl);
+        const oldRoute = this._extractRoute(oldUrl);
+        const newRoute = this._extractRoute(newUrl);
         const paramsObject =  this._extractParamsObject(newUrl);
-        if (newPath !== oldPath) {
-            this.routeTo(newUrl, params)
+        if (newRoute !== oldRoute) {
+            this.routeTo(newRoute, paramsObject)
         } else if (newUrl !== oldUrl){
-            if (page) {
-                page.controller.paramsChange(paramsObject);
+            if (this.page) {
+                this.page.controller.paramsChange(paramsObject);
             }
         }
     }
 
-    _findPage(path) {
-        switch(path) {
+    _findPage(route) {
+        switch(route) {
             case "":
                 return this.pages.index;
             case "/weapons":
@@ -58,16 +59,17 @@ export default class Router {
 
     _extractRoute(url) {
         if (url) {
-            const path = url
+            const route = url
                 .replace(/.*#([^?]*).*/,"$1")
                 .replace(/\/$/, "");
-            return path;
+            return route;
         }
     }
 
     _extractParamsObject(url) {
-        if (url) {
-            const paramsString = url.replace(/.*\?(.*)/,"$1") || "";
+        if (url && url.search("q") >=  0) {
+            const paramsString = url
+                .replace(/.*\?(.*)/,"$1") || "";
             return this._paramsAsObject(paramsString);
         } else {
             return {};

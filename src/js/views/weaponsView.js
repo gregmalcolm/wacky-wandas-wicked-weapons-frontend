@@ -16,22 +16,22 @@ export default class WeaponsView extends BaseView {
     modelChanged(event, args) {
         switch(event) {
             case "itemsChanged":
-                this._renderWeapons(args);
+                this._renderWeapons(...args);
                 break;
         }
     }
 
     render() {
         super.render();
-
-        const weaponsListEl = document.querySelector(".weapons-list");
     }
 
     _renderWeapons(weapons) {
         const html = weapons.reduce((acc, weapon) => {
-            return resultsTemplate();
+            acc = acc + resultsTemplate();
+            return acc;
         }, "");
 
+        const weaponsListEl = document.querySelector(".weapons-list");
         weaponsListEl.innerHTML = html;
     }
 }

@@ -22,6 +22,6 @@ export default class WeaponsController extends BaseController {
     }
 
     _searchParams(params) {
-        return `like_name=${params.q}`;
+        return `like_name=${params.q || ""}`;
     }
 }

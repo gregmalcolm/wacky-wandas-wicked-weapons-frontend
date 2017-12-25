@@ -1,1 +1,7 @@
-{ "presets": ["env"] }
+{
+  "plugins": [
+    ["transform-runtime", { "useBuiltIns": true }],
+    ["transform-es2015-destructuring"],
+    ["@babel/plugin-proposal-object-rest-spread", { "useBuiltIns": true }]
+  ]
+}
