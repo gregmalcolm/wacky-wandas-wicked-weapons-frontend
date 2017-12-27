@@ -1,4 +1,4 @@
-export default class AppView {
+export default class BaseView {
     constructor(controller) {
         this.template = "";
         this.controller = controller;
@@ -23,5 +23,10 @@ export default class AppView {
         } else {
             console.error("Can't find element needed for an event");
         }
+    }
+
+    _updateElement(selector, html) {
+        const el = document.querySelector(selector);
+        el.innerHTML = html;
     }
 }

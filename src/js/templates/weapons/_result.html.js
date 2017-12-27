@@ -24,5 +24,5 @@ const resultTemplate = (weapon) => `
             <button class="buy-button" type="button">Buy!</button>
         </div>
     </li>
-    `;
+`;
 export default resultTemplate;

@@ -1,7 +1,8 @@
-import pageTemplate from "../templates/weapons.html.js";
+import pageHtml from "../templates/weapons.html.js";
 
-import resultsTemplate from "../templates/weapons/_result.html.js";
-import loadingTemplate from "../templates/weapons/_loading.html.js";
+import resultHtml from "../templates/weapons/_result.html.js";
+import resultsInfoHtml from "../templates/weapons/_resultsInfo.html.js";
+import loadingHtml from "../templates/weapons/_loading.html.js";
 
 import BaseView from "./BaseView.js"
 
@@ -9,7 +10,7 @@ export default class WeaponsView extends BaseView {
     constructor(controller) {
         super(controller);
 
-        this.template = pageTemplate();
+        this.template = pageHtml();
     }
 
     registerEvents() {
@@ -26,20 +27,20 @@ export default class WeaponsView extends BaseView {
     render() {
         super.render();
 
-        const weaponsHeaderEl = document.querySelector(".weapons-header");
-        weaponsHeaderEl.innerHTML = loadingTemplate();
+        this._updateElement(".weapons-header", loadingHtml());
     }
 
     _renderWeapons(weapons) {
-        const weaponsHeaderEl = document.querySelector(".weapons-header");
-        weaponsHeaderEl.innerHTML = "";
+        this._updateElement(".weapons-header", resultsInfoHtml(weapons));
 
-        const html = weapons.reduce((acc, weapon) => {
-            acc = acc + resultsTemplate(weapon);
+        const html = this._buildResultsHtml(weapons.items);
+        this._updateElement(".weapons-list", html);
+    }
+
+    _buildResultsHtml(weapons) {
+        return weapons.reduce((acc, weapon) => {
+            acc = acc + resultHtml(weapon);
             return acc;
         }, "");
-
-        const weaponsListEl = document.querySelector(".weapons-list");
-        weaponsListEl.innerHTML = html;
     }
 }

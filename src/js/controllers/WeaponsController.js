@@ -9,6 +9,7 @@ export default class WeaponsController extends BaseController {
     fetchWeapons(params) {
         this._fetchWeaponsAsync(params)
             .then(result => {
+                this.model.params = params;
                 this.model.addJsonItems(result.data);
             })
             .catch(reason => console.error(reason.message));

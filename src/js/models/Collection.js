@@ -4,6 +4,7 @@ export default class Collection {
     constructor(view, items) {
         this.view = view;
         this.items = items;
+        this.params = {};
     }
 
     notifyView(updateType, ...args) {
@@ -11,4 +12,10 @@ export default class Collection {
             this.view.modelChanged(updateType, args);
         }
     }
+
+    getSearchText() {
+        const params = this.params || {};
+        return params.q || "";
+    }
+
 }
