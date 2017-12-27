@@ -35,13 +35,13 @@ export default class Router {
         const oldRoute = this._extractRoute(oldUrl);
         const newRoute = this._extractRoute(newUrl);
         const paramsObject =  this._extractParamsObject(newUrl);
-        if (newRoute !== oldRoute) {
+        //if (newRoute !== oldRoute) {
             this.routeTo(newRoute, paramsObject)
-        } else if (newUrl !== oldUrl){
-            if (this.page) {
-                this.page.controller.paramsChange(paramsObject);
-            }
-        }
+        //} else if (newUrl !== oldUrl){
+            //if (this.page) {
+                //this.page.controller.paramsChange(paramsObject);
+            //}
+        //}
     }
 
     _findPage(route) {

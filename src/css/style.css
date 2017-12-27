@@ -36,8 +36,50 @@ button {
     color: #cd7f32 
 }
 
+.loading {
+    text-align: center;
+    margin: 80px auto;
+    font-size: 38px;
+}
+
+.loading img {
+    /*Size: 552x720*/
+    width: 110px;
+    height: 144px;
+    vertical-align: middle;
+
+    animation: bounce 0.2s infinite alternate;
+}
+
+.large-mobile-inline {
+    display: none;
+}
+
+.desktop-inline {
+    display: none;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-25px);
+  }
+}
+
 @media (min-width: 450px) {
     body {
         margin: 4px;
+    }
+
+    .large-mobile-inline {
+        display: inline;
+    }
+}
+
+@media (min-width: 768px) {
+    .desktop-inline {
+        display: inline;
     }
 }
