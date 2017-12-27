@@ -1,4 +1,5 @@
 .weapons-list {
+    padding: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -6,7 +7,8 @@
 
 .search-result {
     list-style-type: none;
-    max-width: 300px;
+    min-width: 100%;
+    max-width: 100%;
     text-align: center;
 }
 
@@ -86,3 +88,28 @@
     outline:0;
 }
 
+
+@media (min-width: 450px) {
+    .search-result {
+        min-width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+@media (min-width: 673px) {
+    .search-result {
+        min-width: 50%;
+    }
+}
+
+@media (min-width: 973px) {
+    .search-result {
+        min-width: 33%;
+    }
+}
+@media (min-width: 1273px) {
+    .search-result {
+        min-width: 25%;
+    }
+}

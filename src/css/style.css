@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     font-size: 28px;
     font-family: helvetica;
     background-image: url("/images/white-paper-background.jpg");
@@ -33,4 +34,10 @@ button {
 
 .currency-cp {
     color: #cd7f32 
+}
+
+@media (min-width: 450px) {
+    body {
+        margin: 4px;
+    }
 }
