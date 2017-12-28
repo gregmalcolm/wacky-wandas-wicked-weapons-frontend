@@ -3,7 +3,7 @@ import Model from './Model.js'
 export default class CartItem extends Model {
     constructor(attr) {
         super(attr);
-        this._weaponid = attr.weaponId;
+        this._weaponId = attr.weaponId;
         this._name = attr.name;
         this._imageUrl = attr.imageUrl;
         this._baseCost = attr.baseCost;
@@ -72,7 +72,19 @@ export default class CartItem extends Model {
     }
 
     save() {
-        this.calculateCost();
-        return true;
+        const cartData = JSON.parse(localStorage.cart || "[]")
+            .filter((item) => item.weaponId !== this._weaponId);
+        cartData.push({
+            weaponId: this.weaponId,
+            name: this.name,
+            imageUrl: this.imageUrl,
+            baseCost: this.baseCost,
+            quantity: this.quantity
+        });
+        localStorage.cart = JSON.stringify(cartData);
+        return localStorage.cart;
+    }
+
+    load() {
     }
 }

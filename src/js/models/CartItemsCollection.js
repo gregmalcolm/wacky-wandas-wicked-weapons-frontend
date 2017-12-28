@@ -15,11 +15,14 @@ export default class CartItemsCollection extends Collection {
     }
 
     addItem(weapon) {
-        const cartItem = this.find(weapon.id);
+        let cartItem = this.find(weapon.id);
         if (cartItem) {
             this._adjustItemQuantity(cartItem, 1);
         } else {
-            this._createItem(weapon);
+            cartItem = this._createItem(weapon);
+        }
+        if (cartItem) {
+
         }
     }
 
@@ -40,8 +43,10 @@ export default class CartItemsCollection extends Collection {
         });
         if (cartItem.save()) {
             this.items.push(cartItem);
+            return cartItem;
         } else {
             console.error(`Unable to add weapon#${weapon.id} to the cart`);
+            return null;
         }
     }
 }
