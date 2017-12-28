@@ -18,4 +18,17 @@ export default class Collection {
         return params.q || "";
     }
 
+    prevPage() {
+        let page = parseInt(this.params.page || 1)
+        if (page > 1) {
+            page -= 1;
+        }
+        this.params.page = page.toString();
+    }
+
+    nextPage() {
+        let page = parseInt(this.params.page || 1)
+        this.params.page = (page + 1).toString();
+    }
+
 }

@@ -28,7 +28,7 @@ export default class Router {
     }
 
     transitionTo(route, params) {
-        location.hash = `${route}?${params}`
+        location.hash = `${route}?${this._paramsAsString(params)}`
     }
 
     tryTransition(oldUrl, newUrl) {
@@ -71,7 +71,7 @@ export default class Router {
     }
 
     _extractParamsObject(url) {
-        if (url && url.search("q") >=  0) {
+        if (url && url.search(/\?/) >=  0) {
             const paramsString = url
                 .replace(/.*\?(.*)/,"$1") || "";
             return this._paramsAsObject(paramsString);
@@ -88,5 +88,18 @@ export default class Router {
                 acc[kv[0]]=kv[1];
                 return acc;
             }, {});
+    }
+
+    _paramsAsString(params) {
+        if (typeof params !== "string") {
+            if (params) {
+                params = Object.keys(params)
+                    .map((key) => `${key}=${params[key]}`)
+                    .join("&")
+            } else {
+                params ="";
+            }
+        }
+        return params;
     }
 }

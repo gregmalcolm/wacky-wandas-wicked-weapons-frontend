@@ -1,4 +1,5 @@
 import '../../css/weapons.css';
+import '../../css/weaponsPaging.css';
 
 import BasePage from './BasePage.js';
 import WeaponsController from '../Controllers/WeaponsController.js';

@@ -9,18 +9,20 @@ export default class WeaponsCollection extends Collection {
         this.pagination = new Pagination();
     }
 
-    addJsonItems(data) {
-        if (data) {
-            this.items = data.map((json) => {
+    addJsonItems(results) {
+        if (results) {
+            this.items = results.data.map((json) => {
                 const attributes = Object.assign({id: json.id}, json.attributes)
                 return new Weapon(attributes);
             });
-            this.pagination.updateFromResponseLinks(data.links);
+            this.pagination.updateFromResponseLinks(results.links);
             this.notifyView("itemsChanged", this);
         } else {
             console.error("json data is not present");
         }
     }
+
+
 
 
 }

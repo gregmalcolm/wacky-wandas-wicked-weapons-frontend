@@ -16,9 +16,9 @@ export default class Pagination {
 
             this.page = this._extractQueryParamValue(selfUrl, "page\\[number\\]");
             this.pageSize = this._extractQueryParamValue(selfUrl, "page\\[size\\]");
-            this.numOfPages = this._extractQueryParamValue(lastUrl, "page\\[Number\\]");
-            this.hasPrev = !!this.prevUrl;
-            this.hasNext = !!this.nextUrl;
+            this.numOfPages = this._extractQueryParamValue(lastUrl, "page\\[number\\]");
+            this.hasPrev = prevUrl && prevUrl !== "null";
+            this.hasNext = nextUrl && nextUrl !== "null";
         }
     }
 
@@ -26,9 +26,9 @@ export default class Pagination {
         let value = null;
 
         if (url) {
-            const pattern = new Regexp(key + "=(\\d*)");
+            const pattern = new RegExp(key + "=(\\d*)");
             const matches = url.match(pattern);
-            value = (matches.size) >= 2 ? parseInt(matches[1]) : null;
+            value = matches.length >= 2 ? parseInt(matches[1]) : null;
         }
 
         return value;

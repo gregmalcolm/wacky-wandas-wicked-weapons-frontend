@@ -8,9 +8,4 @@ export default class BaseController {
         this.prevParams = this.params;
         this.params = params;
     }
-
-    searchText() {
-        const params = this.params || {};
-        return params.q || "";
-    }
 }

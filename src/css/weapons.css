@@ -1,4 +1,5 @@
 .weapons-list {
+    margin: 0;
     padding: 0;
     display: flex;
     flex-direction: row;
@@ -88,6 +89,15 @@
     outline:0;
 }
 
+.critical-failure {
+    text-align: center;
+    margin: 100px;
+}
+
+.critical-failure img {
+    box-shadow: -1px 1px 1px 1px #ccc;
+    border-radius:3px;
+}
 
 @media (min-width: 450px) {
     .search-result {

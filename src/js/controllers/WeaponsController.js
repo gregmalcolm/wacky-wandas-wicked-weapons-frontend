@@ -10,9 +10,21 @@ export default class WeaponsController extends BaseController {
         this._fetchWeaponsAsync(params)
             .then(result => {
                 this.model.params = params;
-                this.model.addJsonItems(result.data);
+                this.model.addJsonItems(result);
             })
             .catch(reason => console.error(reason.message));
+    }
+
+    prevPage() {
+        this.model.prevPage();
+
+        this.router.transitionTo("/weapons", this.model.params);
+    }
+
+    nextPage() {
+        this.model.nextPage();
+
+        this.router.transitionTo("/weapons", this.model.params);
     }
 
     async _fetchWeaponsAsync(params) {
@@ -24,6 +36,13 @@ export default class WeaponsController extends BaseController {
     }
 
     _searchParams(params) {
-        return `like_name=${params.q || ""}`;
+        const query = [];
+        if (params.q) {
+            query.push(`like_name=${params.q}`);
+        }
+        if (params.page) {
+            query.push(`page[number]=${params.page}`);
+        }
+        return query.join("&");
     }
 }
