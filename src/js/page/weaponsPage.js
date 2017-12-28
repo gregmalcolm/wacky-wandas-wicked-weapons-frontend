@@ -5,6 +5,7 @@ import BasePage from './BasePage.js';
 import WeaponsController from '../Controllers/WeaponsController.js';
 import WeaponsView from '../views/WeaponsView.js';
 import WeaponsCollection from '../models/WeaponsCollection.js';
+import CartItemsCollection from '../models/CartItemsCollection.js';
 
 export default class WeaponsPage extends BasePage {
     constructor(router) {
@@ -12,8 +13,9 @@ export default class WeaponsPage extends BasePage {
 
         this.controller = new WeaponsController(router);
         this.view = new WeaponsView(this.controller);
-        this.model = new WeaponsCollection(this.view);
-        this.controller.model = this.model;
+
+        this.controller.weapons = new WeaponsCollection(this.view);
+        this.controller.cartItems = new CartItemsCollection(this.view);
 
         this.updateApp("weapons");
     }

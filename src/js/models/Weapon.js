@@ -23,28 +23,68 @@ export default class Weapon extends Model {
     get name() {
         return this._name;
     }
+    set name(name) {
+        this.name = name;
+    }
+
+    get category() {
+        return this._category;
+    }
+    set category(category) {
+        this._category = category;
+    }
+
+    get subcategory() {
+        return this._subcategory;
+    }
+    set subcategory(subcategory) {
+        this._subcategory = subcategory;
+    }
+
+    get cost() {
+        return this._cost;
+    }
+    set cost(damage) {
+        this._cost = cost;
+    }
 
     get damage() {
         return this._damage;
+    }
+    set damage(damage) {
+        this._damage = damage;
+    }
+
+    get range() {
+        return this._range;
+    }
+    set range(range) {
+        this._range = range;
     }
 
     get weight() {
         return this._weight;
     }
-
-    getRange() {
-        return this._range ? `${this._range} lb` : "-"
+    set weight(weight) {
+        this._weight = weight;
     }
 
-    getImageUrl() {
+    get imageUrl() {
         if (this._imageUrl) {
             return this._imageUrl;
         } else {
             return this._placeholderImageUrl();
         }
     }
+    set imageUrl(imageUrl) {
+        this._imageUrl = imageUrl;
+    }
 
-    getCostInCoins() {
+    rangeText() {
+        return this._range ? `${this._range} lb` : "-"
+    }
+
+    costInCoins() {
         if (this._cost >= 100) {
             return this._cost/100;
         } else if (this.cost >= 10){
@@ -54,7 +94,7 @@ export default class Weapon extends Model {
         }
     }
 
-    getCostCurrency() {
+    costCurrency() {
         if (this._cost >= 100) {
             return "gp";
         } else if (this.cost >= 10){

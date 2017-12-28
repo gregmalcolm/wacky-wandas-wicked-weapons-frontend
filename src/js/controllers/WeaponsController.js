@@ -1,6 +1,10 @@
 import BaseController from './BaseController.js'
 
 export default class WeaponsController extends BaseController {
+    constructor(router) {
+        super(router);
+    }
+
     paramsChange(params) {
         super.paramsChange(params);
         this.fetchWeapons(params);
@@ -9,29 +13,34 @@ export default class WeaponsController extends BaseController {
     fetchWeapons(params) {
         this._fetchWeaponsAsync(params)
             .then(result => {
-                this.model.params = params;
-                this.model.addJsonItems(result);
+                this.weapons.params = params;
+                this.weapons.addJsonItems(result);
             })
             .catch(reason => {
-                console.error(`Weapons ajax problem: ${reason.message}`)
+                console.error("Weapons ajax problem:\n", reason)
                 this.router.transitionTo("/errors");
             });
     }
 
     prevPage() {
-        this.model.prevPage();
+        this.weapons.prevPage();
 
-        this.router.transitionTo("/weapons", this.model.params);
+        this.router.transitionTo("/weapons", this.weapons.params);
     }
 
     nextPage() {
-        this.model.nextPage();
+        this.weapons.nextPage();
 
-        this.router.transitionTo("/weapons", this.model.params);
+        this.router.transitionTo("/weapons", this.weapons.params);
     }
 
-    buy() {
-
+    buy(weaponId) {
+        const weapon = this.weapons.find(weaponId);
+        if (weapon) {
+            this.cartItems.addItem(weapon);
+        } else {
+            console.error(`WeaponsController.buy(): Can't find weapon for id ${weaponId}`);
+        }
     }
 
     async _fetchWeaponsAsync(params) {

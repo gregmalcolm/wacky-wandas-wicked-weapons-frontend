@@ -7,16 +7,16 @@ const resultTemplate = (weapon) => `
                 </h3>
             </a>
             <a href="#">
-                <img class="search-result__image" src="${weapon.getImageUrl()}" alt="${weapon.name}">
+                <img class="search-result__image" src="${weapon.imageUrl}" alt="${weapon.name}">
             </a>
             <dl class="result_details__info__specifics">
                 <dt>Costs:</dd>
-                <dd>${weapon.getCostInCoins()} <span class="currency-${weapon.getCostCurrency()}">${weapon.getCostCurrency()}</span>
+                <dd>${weapon.costInCoins()} <span class="currency-${weapon.costCurrency()}">${weapon.costCurrency()}</span>
                 <dt>Damage:</dt>
                 <dd>${weapon.damage}</dd>
 
                 <dt>Range:</dt>
-                <dd>${weapon.getRange()}</dd>
+                <dd>${weapon.rangeText()}</dd>
 
                 <dt>Weight:</dt>
                 <dd>${weapon.weight} lb</dd>

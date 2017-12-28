@@ -17,9 +17,9 @@ export default class BaseView {
     }
 
     _registerEvent(selector, eventType, cb) {
-        const el = document.querySelector(selector);
-        if (el) {
-            el.addEventListener(eventType, cb);
+        const els = document.querySelectorAll(selector);
+        if (els.length > 0) {
+            els.forEach((el) => el.addEventListener(eventType, cb));
         } else {
             console.error(`Can't find element needed for an event ${selector}`);
         }

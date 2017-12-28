@@ -2,8 +2,8 @@ import Model from './Model.js';
 
 export default class Collection {
     constructor(view, items) {
-        this.view = view;
-        this.items = items;
+        this.view = view || {};
+        this.items = items || [];
         this.params = {};
     }
 

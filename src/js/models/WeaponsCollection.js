@@ -9,6 +9,11 @@ export default class WeaponsCollection extends Collection {
         this.pagination = new Pagination();
     }
 
+    find(id) {
+        return this.items.find((item) =>
+            item.id === id);
+    }
+
     addJsonItems(results) {
         if (results) {
             this.items = results.data.map((json) => {

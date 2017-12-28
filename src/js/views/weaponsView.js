@@ -53,10 +53,11 @@ export default class WeaponsView extends BaseView {
         });
 
         this._registerEvent(".buy-button", "click", (e) => {
-            this.controller.buy();
+            const searchResultEl = e.target.closest(".search-result");
+            const weaponId = searchResultEl.getAttribute("data-id");
+            this.controller.buy(weaponId);
         })
     }
-
 
     _buildResultsHtml(weapons) {
         return weapons.reduce((acc, weapon) => {
