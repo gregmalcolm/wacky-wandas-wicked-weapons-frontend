@@ -4,11 +4,11 @@ import AppView from '../views/AppView.js'
 
 export default class AppPage extends BasePage {
     constructor(router) {
-        super();
+        super(router);
 
         this.controller = new AppController(router);
         this.view = new AppView(this.controller);
 
-        this.updateApp();
+        this.updateApp("app");
     }
 }

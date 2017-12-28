@@ -4,8 +4,10 @@ export default class BasePage {
         this.view = null;
     }
 
-    updateApp() {
-        window.app.controllers.app = this.controller;
-        window.app.views.app = this.view;
+    updateApp(pageName) {
+        if (pageName) {
+            window.app.controllers[pageName] = this.controller;
+            window.app.views[pageName] = this.view;
+        }
     }
 }

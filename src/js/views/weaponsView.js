@@ -36,20 +36,25 @@ export default class WeaponsView extends BaseView {
             this._updateElement(".weapons-footer", criticalFailureHtml());
         }
 
-        this._registerPaginationEvents();
 
         const html = this._buildResultsHtml(weapons.items);
         this._updateElement(".weapons-list", html);
+
+        this._registerResultsEvents();
     }
 
-    _registerPaginationEvents() {
-        this._registerEvent(".btn-prev", "click", (e) => {
+    _registerResultsEvents() {
+        this._registerEvent(".btn-prev", "click", () => {
             this.controller.prevPage();
         });
 
-        this._registerEvent(".btn-next", "click", (e) => {
+        this._registerEvent(".btn-next", "click", () => {
             this.controller.nextPage();
         });
+
+        this._registerEvent(".buy-button", "click", (e) => {
+            this.controller.buy();
+        })
     }
 
 

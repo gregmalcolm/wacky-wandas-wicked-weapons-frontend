@@ -12,7 +12,10 @@ export default class WeaponsController extends BaseController {
                 this.model.params = params;
                 this.model.addJsonItems(result);
             })
-            .catch(reason => console.error(reason.message));
+            .catch(reason => {
+                console.error(`Weapons ajax problem: ${reason.message}`)
+                this.router.transitionTo("/errors");
+            });
     }
 
     prevPage() {
@@ -25,6 +28,10 @@ export default class WeaponsController extends BaseController {
         this.model.nextPage();
 
         this.router.transitionTo("/weapons", this.model.params);
+    }
+
+    buy() {
+
     }
 
     async _fetchWeaponsAsync(params) {

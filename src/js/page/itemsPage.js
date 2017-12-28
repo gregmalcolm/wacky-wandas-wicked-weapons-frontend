@@ -4,12 +4,12 @@ import ItemsView from "../views/ItemsView.js"
 
 export default class ItemsPage extends BasePage {
     constructor(router) {
-        super();
+        super(router);
 
         this.controller = new ItemsController(router);
         this.view = new ItemsView(this.controller);
 
-        this.updateApp();
+        this.updateApp("items");
     }
 
     transition() {

@@ -8,14 +8,14 @@ import WeaponsCollection from '../models/WeaponsCollection.js';
 
 export default class WeaponsPage extends BasePage {
     constructor(router) {
-        super();
+        super(router);
 
         this.controller = new WeaponsController(router);
         this.view = new WeaponsView(this.controller);
         this.model = new WeaponsCollection(this.view);
         this.controller.model = this.model;
 
-        this.updateApp();
+        this.updateApp("weapons");
     }
 
     transition(params) {

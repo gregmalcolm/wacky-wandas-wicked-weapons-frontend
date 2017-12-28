@@ -1,0 +1,20 @@
+.welcome {
+    text-align: center;
+    margin: auto;
+}
+
+.welcome h2 {
+    text-align: center;
+    color: #9d0a0e;
+    margin: 30px 0 0;
+}
+
+.welcome h3 {
+    text-align: center;
+    margin: 10px 0 30px 0;
+}
+
+.welcome img {
+    width: 50%;
+}
+

@@ -2,6 +2,7 @@ import AppPage from './page/AppPage.js'
 import IndexPage from './page/IndexPage.js'
 import WeaponsPage from './page/WeaponsPage.js'
 import ItemsPage from './page/ItemsPage.js'
+import ErrorsPage from './page/ErrorsPage.js'
 
 export default class Router {
     constructor() {
@@ -12,13 +13,14 @@ export default class Router {
         this.pages.index = new IndexPage(this);
         this.pages.weapons = new WeaponsPage(this);
         this.pages.items = new ItemsPage(this);
+        this.pages.errors = new ErrorsPage(this);
 
         window.app.pages = this.pages;
     }
 
     routeTo(route, params) {
         this.page = this._findPage(route);
-        this.page.transition(params);
+        this.page.transition(params || {});
     }
 
     routeToUrl(url) {
@@ -35,13 +37,7 @@ export default class Router {
         const oldRoute = this._extractRoute(oldUrl);
         const newRoute = this._extractRoute(newUrl);
         const paramsObject =  this._extractParamsObject(newUrl);
-        //if (newRoute !== oldRoute) {
-            this.routeTo(newRoute, paramsObject)
-        //} else if (newUrl !== oldUrl){
-            //if (this.page) {
-                //this.page.controller.paramsChange(paramsObject);
-            //}
-        //}
+        this.routeTo(newRoute, paramsObject)
     }
 
     _findPage(route) {
@@ -52,8 +48,11 @@ export default class Router {
                 return this.pages.weapons;
             case "/items":
                 return this.pages.items;
+            case "/errors":
+                return this.pages.errors;
             default:
-                console.error("Unknown page");
+                console.error(`Router error: unknown page ${route}`);
+                debugger;
         }
     }
 
@@ -97,7 +96,7 @@ export default class Router {
                     .map((key) => `${key}=${params[key]}`)
                     .join("&")
             } else {
-                params ="";
+                params = "";
             }
         }
         return params;

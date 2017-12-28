@@ -25,20 +25,16 @@
 
 .results-info .page-buttons .btn {
     padding: 3px 2px 1px;
+    background: #ddd;
 }
 
 .results-info .page-buttons img {
     filter: grayscale(100%);
 }
 
-.results-info .page-buttons .btn-disabled,
-.results-info .page-buttons .btn-disabled:active
-{
-    filter: grayscale(100%);
-    background: #ddd;
-}
-
+.results-info .page-buttons .btn:hover, 
 .results-info .page-buttons img:hover {
+    background-color: #fff;
     filter: inherit;
 }
 
@@ -47,8 +43,19 @@
 }
 .results-info .page-buttons .btn:active,
 .results-info .page-buttons img:active {
-    background-color: yellow;
+    background-color: #ccc;
 }
+
+.results-info .page-buttons .btn-disabled *,
+.results-info .page-buttons .btn-disabled *:active,
+.results-info .page-buttons .btn-disabled *:hover,
+.results-info .page-buttons .btn-disabled:active ,
+.results-info .page-buttons .btn-disabled:hover ,
+.results-info .page-buttons .btn-disabled {
+    filter: grayscale(100%);
+    background: #ccc;
+}
+
 
 @media (min-width: 673px) {
     .results-info .stats {

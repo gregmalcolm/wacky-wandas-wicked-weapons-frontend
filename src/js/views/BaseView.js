@@ -21,7 +21,7 @@ export default class BaseView {
         if (el) {
             el.addEventListener(eventType, cb);
         } else {
-            console.error("Can't find element needed for an event");
+            console.error(`Can't find element needed for an event ${selector}`);
         }
     }
 
