@@ -1,7 +1,7 @@
 import '../../css/index.css';
 
 import BasePage from './BasePage.js'
-import IndexController from "../Controllers/IndexController.js"
+import IndexController from "../controllers/IndexController.js"
 import IndexView from "../views/IndexView.js"
 
 export default class IndexPage extends BasePage {

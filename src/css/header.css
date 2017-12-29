@@ -50,6 +50,10 @@
     color: #fab7b9;
 }
 
+.navbar .navbar__li-pay a:hover {
+    color: #fab700;
+}
+
 .navbar__li-buttons {
     float: left;
 }

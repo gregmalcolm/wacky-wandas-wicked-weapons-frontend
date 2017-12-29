@@ -84,7 +84,4 @@ export default class CartItem extends Model {
         localStorage.cart = JSON.stringify(cartData);
         return localStorage.cart;
     }
-
-    load() {
-    }
 }

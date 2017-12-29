@@ -1,7 +1,7 @@
 import '../../css/errors.css';
 
 import BasePage from './BasePage.js'
-import ErrorsController from "../Controllers/ErrorsController.js"
+import ErrorsController from "../controllers/ErrorsController.js"
 import ErrorsView from "../views/ErrorsView.js"
 
 export default class ErrorsPage extends BasePage {

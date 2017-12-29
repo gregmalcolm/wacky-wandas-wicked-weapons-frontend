@@ -1,5 +1,5 @@
 import BasePage from './BasePage.js'
-import AppController from '../Controllers/AppController.js'
+import AppController from '../controllers/AppController.js'
 import AppView from '../views/AppView.js'
 
 export default class AppPage extends BasePage {

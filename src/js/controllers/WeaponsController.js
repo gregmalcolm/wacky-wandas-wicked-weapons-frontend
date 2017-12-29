@@ -37,7 +37,11 @@ export default class WeaponsController extends BaseController {
     buy(weaponId) {
         const weapon = this.weapons.find(weaponId);
         if (weapon) {
-            this.cartItems.addItem(weapon);
+            const cartItem = this.cart.addItem(weapon);
+            if (cartItem) {
+                this.router.transitionTo("/items", this.weapons.params);
+            }
+
         } else {
             console.error(`WeaponsController.buy(): Can't find weapon for id ${weaponId}`);
         }

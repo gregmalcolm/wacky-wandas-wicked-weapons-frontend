@@ -6,7 +6,12 @@ export default class ItemsView extends BaseView {
     constructor(controller) {
         super(controller);
 
-        this.template = pageTemplate();
+        this.template = "";
+    }
+
+    render(cart) {
+        this.template = pageTemplate(cart);
+        super.render();
     }
 
 }
