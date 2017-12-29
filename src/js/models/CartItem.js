@@ -84,4 +84,11 @@ export default class CartItem extends Model {
         localStorage.cart = JSON.stringify(cartData);
         return localStorage.cart;
     }
+
+    drop() {
+        const cartData = JSON.parse(localStorage.cart || "[]")
+            .filter((item) => item.weaponId !== this._weaponId);
+        localStorage.cart = JSON.stringify(cartData);
+        return localStorage.cart;
+    }
 }

@@ -36,6 +36,16 @@ export default class CartItemsCollection extends Collection {
         return cartItem;
     }
 
+    removeItem(weaponId) {
+        const cartItem = this.find(weaponId);
+        if (cartItem) {
+            cartItem.drop();
+            this.items = this.items.filter((item) => item.weaponId !== weaponId)
+        } else {
+            console.info(`Couldn't remove item#${weaponId}. Some taffer has made off with it!`);
+        }
+    }
+
     calculateTotal() {
         return this.items.reduce((total, item) =>
             total + (item.baseCost * item.quantity)

@@ -1,10 +1,6 @@
 import BaseController from './BaseController.js'
 
 export default class WeaponsController extends BaseController {
-    constructor(router) {
-        super(router);
-    }
-
     paramsChange(params) {
         super.paramsChange(params);
         this.fetchWeapons(params);

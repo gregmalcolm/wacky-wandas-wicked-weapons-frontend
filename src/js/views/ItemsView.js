@@ -14,4 +14,15 @@ export default class ItemsView extends BaseView {
         super.render();
     }
 
+    registerEvents() {
+        super.registerEvents();
+        this._registerEvent(".cart-remove-link", "click", (e) => {
+            e.preventDefault();
+
+            const weaponId = e.target.getAttribute("data-weapon-id");
+            this.controller.removeCartItem(weaponId);
+        });
+
+    }
+
 }

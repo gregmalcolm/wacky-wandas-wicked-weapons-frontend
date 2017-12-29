@@ -8,7 +8,11 @@ export default class AppPage extends BasePage {
 
         this.controller = new AppController(router);
         this.view = new AppView(this.controller);
+        this.view.registerEvents();
 
         this.updateApp("app");
+    }
+
+    transition(params) {
     }
 }
