@@ -1,14 +1,10 @@
 const resultTemplate = (weapon) => `
     <li class="search-result" data-id="${weapon.id}">
         <div class="search-details">
-            <a class="result-details__title" href="#">
-                <h3 class="result-details__title-header">
-                    ${weapon.name}
-                </h3>
-            </a>
-            <a href="#">
-                <img class="search-result__image" src="${weapon.imageUrl}" alt="${weapon.name}">
-            </a>
+            <h3 class="result-details__title-header">
+                ${weapon.name}
+            </h3>
+            <img class="search-result__image" src="${weapon.imageUrl}" alt="${weapon.name}">
             <dl class="result_details__info__specifics">
                 <dt>Costs:</dd>
                 <dd>${weapon.costInCoins()} <span class="currency-${weapon.costCurrency()}">${weapon.costCurrency()}</span>
