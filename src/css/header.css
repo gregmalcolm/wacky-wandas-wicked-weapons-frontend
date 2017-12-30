@@ -1,3 +1,5 @@
+/* Default (Mobile) */
+
 .header-upper {
     display: none;
 }
@@ -99,6 +101,7 @@
     }
 }
 
+/* > iPhone */
 @media (min-width: 451px) {
     .header-upper {
         display: block;
@@ -136,6 +139,7 @@
 }
 
 
+/* > iPad */
 @media (min-width: 769px) {
     .header-upper__logo-face {
         display: inline;

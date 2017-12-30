@@ -1,3 +1,5 @@
+/* Default (Mobile) */
+
 .results-info {
     background: #cccccc80;
     margin: 3px;
@@ -57,6 +59,7 @@
 }
 
 
+/* > iPad */
 @media (min-width: 673px) {
     .results-info .stats {
         display: block;

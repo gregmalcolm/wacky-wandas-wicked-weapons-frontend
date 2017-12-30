@@ -1,3 +1,5 @@
+/* Default (Mobile) */
+
 .weapons-list {
     margin: 0;
     padding: 0;
@@ -99,7 +101,8 @@
     border-radius:3px;
 }
 
-@media (min-width: 450px) {
+/* > iPhone */
+@media (min-width: 451px) {
     .search-result {
         min-width: 100%;
         max-width: 300px;
@@ -107,17 +110,21 @@
 }
 
 
+/* > large Mobile */
 @media (min-width: 673px) {
     .search-result {
         min-width: 50%;
     }
 }
 
+/* > small desktop */
 @media (min-width: 973px) {
     .search-result {
         min-width: 33%;
     }
 }
+
+/* > large desktop */
 @media (min-width: 1273px) {
     .search-result {
         min-width: 25%;
