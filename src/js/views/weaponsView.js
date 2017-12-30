@@ -16,7 +16,7 @@ export default class WeaponsView extends BaseView {
 
     modelChanged(event, args) {
         switch(event) {
-            case "itemsChanged":
+            case "weaponsChanged":
                 this._renderWeapons(...args);
                 break;
         }

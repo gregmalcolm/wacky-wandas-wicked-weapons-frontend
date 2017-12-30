@@ -21,7 +21,7 @@ export default class WeaponsCollection extends Collection {
                 return new Weapon(attributes);
             });
             this.pagination.updateFromResponseLinks(results.links);
-            this.notifyView("itemsChanged", this);
+            this.notifyView("weaponsChanged", this);
         } else {
             console.error("json data is not present");
         }

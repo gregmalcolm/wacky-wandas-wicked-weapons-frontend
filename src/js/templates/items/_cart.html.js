@@ -15,7 +15,7 @@ const cartTemplate = (cart) => {
                         ${item.costInCoins()} <span class="currency-${item.costCurrency()}">${item.costCurrency()}</span>
                     </div>
                     <div class="cart-cell cart-cell__quantity">
-                        <input type="number" value="${item.quantity}" size="3" data-weapon-id="${item.weaponId}">
+                        <input class="cart-quantity-input" type="number" value="${item.quantity}" size="3" data-weapon-id="${item.weaponId}">
                     </div>
                     <div class="cart-cell cart-cell__foot cart-cell__remove">
                         <a class="cart-remove-link" href="#" data-weapon-id="${item.weaponId}">remove</a>

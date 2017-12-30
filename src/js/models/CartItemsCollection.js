@@ -41,8 +41,20 @@ export default class CartItemsCollection extends Collection {
         if (cartItem) {
             cartItem.drop();
             this.items = this.items.filter((item) => item.weaponId !== weaponId)
+            this.notifyView("cartItemRemoved", this, weaponId);
         } else {
-            console.info(`Couldn't remove item#${weaponId}. Some taffer has made off with it!`);
+            console.info(`Couldn't remove item #${weaponId}. Some taffer has made off with it!`);
+        }
+    }
+
+    updateItemQuantity(weaponId, quantity) {
+        const cartItem = this.find(weaponId);
+
+        if (cartItem && quantity) {
+            cartItem.quantity = quantity;
+            this.notifyView("quantityChanged", this, weaponId);
+        } else {
+            console.info(`Couldn't update item #${weaponId}. Some taffer has made off with it!`);
         }
     }
 

@@ -43,10 +43,11 @@ export default class CartItem extends Model {
     }
     set quantity(quantity) {
         this._quantity = quantity;
+        this.save();
     }
 
     calculateCost() {
-        return this.baseCost * this.quantity;
+        return this.baseCost;
     }
 
     costInCoins() {
@@ -81,14 +82,18 @@ export default class CartItem extends Model {
             baseCost: this.baseCost,
             quantity: this.quantity
         });
-        localStorage.cart = JSON.stringify(cartData);
-        return localStorage.cart;
+        return this._writeToLocalStorage(cartData);
     }
 
     drop() {
         const cartData = JSON.parse(localStorage.cart || "[]")
             .filter((item) => item.weaponId !== this._weaponId);
-        localStorage.cart = JSON.stringify(cartData);
+        return this._writeToLocalStorage(cartData);
+    }
+
+    _writeToLocalStorage(cartData) {
+        const sortedData = cartData.sort((a, b) => a.name > b.name);
+        localStorage.cart = JSON.stringify(sortedData);
         return localStorage.cart;
     }
 }

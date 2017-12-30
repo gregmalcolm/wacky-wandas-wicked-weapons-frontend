@@ -17,10 +17,17 @@ export default class BaseView {
         this.registerEvents();
     }
 
-    _registerEvent(selector, eventType, cb) {
+    _registerEvent(selector, eventType, callback) {
         const els = document.querySelectorAll(selector);
+        const eventTypes =
+            (typeof eventType ===  "string")
+                ? [ eventType ]
+                : eventType;
+
         if (els.length > 0) {
-            els.forEach((el) => el.addEventListener(eventType, cb));
+            eventTypes.forEach((et) =>
+                els.forEach((el) => el.addEventListener(et, callback))
+            );
         } else {
             console.info(`Can't find element needed for an event ${selector}`);
         }
