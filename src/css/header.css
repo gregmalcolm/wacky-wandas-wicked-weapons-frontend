@@ -99,7 +99,7 @@
     }
 }
 
-@media (min-width: 450px) {
+@media (min-width: 451px) {
     .header-upper {
         display: block;
     }
@@ -136,7 +136,7 @@
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .header-upper__logo-face {
         display: inline;
     }
