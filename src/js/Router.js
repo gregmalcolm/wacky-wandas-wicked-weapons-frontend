@@ -18,7 +18,24 @@ export default class Router {
         window.app.pages = this.pages;
     }
 
+    _findPage(route) {
+        switch(route) {
+            case "":
+                return this.pages.index;
+            case "/weapons":
+                return this.pages.weapons;
+            case "/items":
+                return this.pages.items;
+            case "/errors":
+                return this.pages.errors;
+            default:
+                console.error(`Router error: unknown page ${route}`);
+                debugger;
+        }
+    }
+
     routeTo(route, params) {
+        console.info("Routing: route:", route, "params:", params);
         this.page = this._findPage(route);
         this.page.transition(params || {});
     }
@@ -38,22 +55,6 @@ export default class Router {
         const newRoute = this._extractRoute(newUrl);
         const paramsObject =  this._extractParamsObject(newUrl);
         this.routeTo(newRoute, paramsObject)
-    }
-
-    _findPage(route) {
-        switch(route) {
-            case "":
-                return this.pages.index;
-            case "/weapons":
-                return this.pages.weapons;
-            case "/items":
-                return this.pages.items;
-            case "/errors":
-                return this.pages.errors;
-            default:
-                console.error(`Router error: unknown page ${route}`);
-                debugger;
-        }
     }
 
     _extractRoute(url) {

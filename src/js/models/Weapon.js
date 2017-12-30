@@ -13,7 +13,7 @@ export default class Weapon extends Model {
         this._damage = attr.damage;
         this._range = attr.range;
         this._weight = attr.weight;
-        this._imageUrl = attr.imageUrl;
+        this._imageUrl = attr.tag;
     }
 
     get id() {
@@ -71,7 +71,7 @@ export default class Weapon extends Model {
 
     get imageUrl() {
         if (this._imageUrl) {
-            return this._imageUrl;
+            return `/images/weapons/${this._imageUrl}`;
         } else {
             return this._placeholderImageUrl();
         }
