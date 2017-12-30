@@ -110,3 +110,21 @@
     }
 
 }
+
+.pay-button {
+    border-radius:5px;
+    background-color: #9d0a0e;
+    color:white;
+    font-size: 36px;
+    transition-duration: 0.4s;
+}
+
+.pay-button:hover {
+    background-color:#ff0303;
+    color:white;
+}
+
+.pay-button:focus {
+    outline:0;
+}
+

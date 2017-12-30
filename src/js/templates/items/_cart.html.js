@@ -30,7 +30,9 @@ const cartTemplate = (cart) => {
                     ${cart.calculateTotalInCoins()} <span class="currency-${cart.getTotalCurrency()}">${cart.getTotalCurrency()}</span>
                 </div>
                 <div class="cart-cell cart-cell__quantity cart-cell__total"></div>
-                <div class="cart-cell cart-cell__foot cart-cell__total cart-cell__remove"></div>
+                <div class="cart-cell cart-cell__foot cart-cell__total cart-cell__remove">
+                    <button class="pay-button" type="button">Pay!</button>
+                </div>
             </div>
         </div>`;
 }

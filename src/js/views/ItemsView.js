@@ -47,14 +47,18 @@ export default class ItemsView extends BaseView {
 
     _onQuantityChanged(cart, weaponId, quantity) {
         const subtotalTextEl =
-            document.querySelector(".cart-cell__name.cart-cell__total")
+            document.querySelector(".cart-cell__name.cart-cell__total");
         const subtotalValueEl =
-            document.querySelector(".cart-cell__cost.cart-cell__total")
+            document.querySelector(".cart-cell__cost.cart-cell__total");
 
-        subtotalTextEl.innerHTML =
-            `Subtotal (${cart.sumOfItems()} items)`;
-        subtotalValueEl.innerHTML =
-            `${cart.calculateTotalInCoins()} <span class="currency-${cart.getTotalCurrency()}">${cart.getTotalCurrency()}</span>`;
+        if (subtotalTextEl && subtotalValueEl) {
+            subtotalTextEl.innerHTML =
+                `Subtotal (${cart.sumOfItems()} items)`;
+            subtotalValueEl.innerHTML =
+                `${cart.calculateTotalInCoins()} <span class="currency-${cart.getTotalCurrency()}">${cart.getTotalCurrency()}</span>`;
+        } else {
+            console.info("ItemsView tried to update the subtotal text but failed");
+        }
     }
 
 }
