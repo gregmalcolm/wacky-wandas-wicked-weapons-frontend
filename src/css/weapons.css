@@ -117,7 +117,7 @@
 
 
 /* > 2 tiles */
-@media (min-width: 673px) {
+@media (min-width: 673) {
     .search-result {
         min-width: 50%;
     }
