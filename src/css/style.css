@@ -45,9 +45,7 @@ button {
 }
 
 .loading img {
-    /*Size: 552x720*/
     width: 110px;
-    height: 144px;
     vertical-align: middle;
 
     animation: bounce 0.2s infinite alternate;
