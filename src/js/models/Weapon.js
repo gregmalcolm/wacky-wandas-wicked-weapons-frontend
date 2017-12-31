@@ -26,6 +26,7 @@ export default class Weapon extends Model {
     }
     set name(name) {
         this.name = name;
+        this._refresh();
     }
 
     get category() {
@@ -33,6 +34,7 @@ export default class Weapon extends Model {
     }
     set category(category) {
         this._category = category;
+        this._refresh();
     }
 
     get subcategory() {
@@ -40,13 +42,15 @@ export default class Weapon extends Model {
     }
     set subcategory(subcategory) {
         this._subcategory = subcategory;
+        this._refresh();
     }
 
     get cost() {
         return this._enchanted ? this._cost * 10 : this._cost;
     }
-    set cost(damage) {
+    set cost(cost) {
         this._cost = cost;
+        this._refresh();
     }
 
     get damage() {
@@ -54,6 +58,7 @@ export default class Weapon extends Model {
     }
     set damage(damage) {
         this._damage = damage;
+        this._refresh();
     }
 
     get range() {
@@ -61,6 +66,7 @@ export default class Weapon extends Model {
     }
     set range(range) {
         this._range = range;
+        this._refresh();
     }
 
     get weight() {
@@ -68,6 +74,7 @@ export default class Weapon extends Model {
     }
     set weight(weight) {
         this._weight = weight;
+        this._refresh();
     }
 
     get imageUrl() {
@@ -79,6 +86,7 @@ export default class Weapon extends Model {
     }
     set imageUrl(imageUrl) {
         this._imageUrl = imageUrl;
+        this._refresh();
     }
 
     get enchanted() {
@@ -86,7 +94,7 @@ export default class Weapon extends Model {
     }
     set enchanted(enchanted) {
         this._enchanted = enchanted;
-        this.collection.notifyView("weaponChanged", this);
+        this._refresh();
     }
 
     rangeText() {
@@ -117,5 +125,9 @@ export default class Weapon extends Model {
         const manifest = imageManifest;
         const imageNum = this._id % manifest.length;
         return `/images/weapons/${manifest[imageNum]}`
+    }
+
+    _refresh() {
+        this.collection.notifyView("weaponChanged", this);
     }
 }

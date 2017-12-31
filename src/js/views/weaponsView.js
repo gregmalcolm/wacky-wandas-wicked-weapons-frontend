@@ -30,15 +30,17 @@ export default class WeaponsView extends BaseView {
     _renderWeapons(weapons) {
         this._replaceInnerElement(".weapon-results", resultsHtml(weapons));
 
-        this._registerResultsEvents(weapons);
+        this._registerWeaponsEvents(weapons);
     }
 
     _renderWeapon(weapon) {
         const selector = `.search-result[data-id='${weapon.id}']`;
         this._replaceElement(selector, resultHtml(weapon));
+
+        this._registerWeaponEvents(weapon);
     }
 
-    _registerResultsEvents(weapons) {
+    _registerWeaponsEvents(weapons) {
         if (weapons.items.length > 0) {
             this._registerEvent(".btn-prev", "click", () => {
                 this.controller.prevPage();
@@ -54,5 +56,12 @@ export default class WeaponsView extends BaseView {
                 this.controller.buy(weaponId);
             })
         }
+    }
+
+    _registerWeaponEvents(weapon) {
+        const buttonSelector = `.search-result[data-id='${weapon.id}'] .buy-button`;
+        this._registerEvent(buttonSelector, "click", (e) => {
+            this.controller.buy(weapon.id);
+        })
     }
 }
