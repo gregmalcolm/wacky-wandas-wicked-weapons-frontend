@@ -101,7 +101,7 @@
     border-radius:3px;
 }
 
-/* > iPhone */
+/* > large mobile */
 @media (min-width: 451px) {
     .search-result {
         min-width: 100%;
@@ -110,21 +110,21 @@
 }
 
 
-/* > large Mobile */
+/* > 2 tiles */
 @media (min-width: 673px) {
     .search-result {
         min-width: 50%;
     }
 }
 
-/* > small desktop */
+/* > 3 tiles */
 @media (min-width: 973px) {
     .search-result {
         min-width: 33%;
     }
 }
 
-/* > large desktop */
+/* > 4 tiles */
 @media (min-width: 1273px) {
     .search-result {
         min-width: 25%;

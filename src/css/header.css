@@ -50,10 +50,12 @@
 .navbar li a:hover {
     background-color: #111;
     color: #fab7b9;
+    transition-duration: 0.4s;
 }
 
 .navbar .navbar__li-pay a:hover {
     color: #fab700;
+    transition-duration: 0.4s;
 }
 
 .navbar__li-buttons {
@@ -101,17 +103,14 @@
     }
 }
 
-/* > iPhone */
+/* > large mobile */
 @media (min-width: 451px) {
     .header-upper {
         display: block;
     }
 
     .header-upper__logo-face {
-        /*width: 185px;*/
-        /*height: 118px;*/
         width: 135px;
-        height: 90px;
         vertical-align: middle;
         display: block;
         margin: 0 auto;
@@ -138,8 +137,7 @@
     }
 }
 
-
-/* > iPad */
+/* > tablet */
 @media (min-width: 769px) {
     .header-upper__logo-face {
         display: inline;
