@@ -101,7 +101,7 @@
     }
 
     .header-upper__logo-face:hover {
-        animation: somersault 0.65s linear;
+        /*animation: somersault 0.2s ease-in-out;*/
         cursor: pointer;
     }
 }
