@@ -60,6 +60,12 @@
     text-align: left;
 }
 
+.result_details__info__specifics dd,
+.result_details__info__specifics dt {
+    font-family: Arial;
+    font-size: 28px;
+}
+
 .result_details__info__specifics dt {
     float: left;
     width: 50%;
