@@ -123,7 +123,7 @@
     }
 
     .header-upper__logo-face:hover {
-        /*animation: somersault 0.2s ease-in-out;*/
+        animation: somersault 0.65s linear;
         cursor: pointer;
     }
 
