@@ -16,7 +16,7 @@ export default class CartItemsCollection extends Collection {
                 imageUrl: item.imageUrl,
                 baseCost: item.baseCost,
                 quantity: item.quantity
-            })
+            }, this)
         );
     }
 

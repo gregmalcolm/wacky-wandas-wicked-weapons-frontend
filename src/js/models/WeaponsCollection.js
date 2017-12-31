@@ -18,7 +18,7 @@ export default class WeaponsCollection extends Collection {
         if (results) {
             this.items = results.data.map((json) => {
                 const attributes = Object.assign({id: json.id}, json.attributes)
-                return new Weapon(attributes);
+                return new Weapon(attributes, this);
             });
             this.pagination.updateFromResponseLinks(results.links);
             this.notifyView("weaponsChanged", this);

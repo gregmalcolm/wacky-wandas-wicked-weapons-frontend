@@ -3,8 +3,8 @@ import Model from './Model.js'
 import imageManifest from '../../../public/images/weapons/manifest.json'
 
 export default class Weapon extends Model {
-    constructor(attr) {
-        super(attr);
+    constructor(attr, collection) {
+        super(attr, collection);
         this._id = attr.id;
         this._name = attr.name;
         this._category = attr.category;
@@ -14,6 +14,7 @@ export default class Weapon extends Model {
         this._range = attr.range;
         this._weight = attr.weight;
         this._imageUrl = attr.tag;
+        this._enchanted = attr.enchanted || false;
     }
 
     get id() {
@@ -42,28 +43,28 @@ export default class Weapon extends Model {
     }
 
     get cost() {
-        return this._cost;
+        return this._enchanted ? this._cost * 10 : this._cost;
     }
     set cost(damage) {
         this._cost = cost;
     }
 
     get damage() {
-        return this._damage;
+        return this._enchanted ? `${this._damage} + 1` : this._damage;
     }
     set damage(damage) {
         this._damage = damage;
     }
 
     get range() {
-        return this._range;
+        return this._enchanted && this._range ? this._range * 2 : this._range;
     }
     set range(range) {
         this._range = range;
     }
 
     get weight() {
-        return this._weight;
+        return this._enchanted && this._weight ? this._weight * 1.2 : this._weight;
     }
     set weight(weight) {
         this._weight = weight;
@@ -78,6 +79,14 @@ export default class Weapon extends Model {
     }
     set imageUrl(imageUrl) {
         this._imageUrl = imageUrl;
+    }
+
+    get enchanted() {
+        return this._enchanted;
+    }
+    set enchanted(enchanted) {
+        this._enchanted = enchanted;
+        this.collection.notify("enchantmentChange", this);
     }
 
     rangeText() {

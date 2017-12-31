@@ -1,8 +1,8 @@
 import Model from './Model.js'
 
 export default class CartItem extends Model {
-    constructor(attr) {
-        super(attr);
+    constructor(attr, collection) {
+        super(attr, collection);
         this._weaponId = attr.weaponId;
         this._name = attr.name;
         this._imageUrl = attr.imageUrl;

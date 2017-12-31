@@ -36,7 +36,6 @@ export default class WeaponsView extends BaseView {
             this._updateElement(".weapons-footer", criticalFailureHtml());
         }
 
-
         const html = this._buildResultsHtml(weapons.items);
         this._updateElement(".weapons-list", html);
 
