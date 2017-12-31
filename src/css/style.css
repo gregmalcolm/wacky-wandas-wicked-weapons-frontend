@@ -62,7 +62,7 @@ button {
 body.container dt, 
 body.container dd {
     font-family: Courier;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 @keyframes bounce {

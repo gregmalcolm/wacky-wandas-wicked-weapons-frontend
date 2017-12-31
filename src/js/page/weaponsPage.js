@@ -1,3 +1,4 @@
+import '../../css/enchanted.css';
 import '../../css/weapons.css';
 import '../../css/weaponsPaging.css';
 

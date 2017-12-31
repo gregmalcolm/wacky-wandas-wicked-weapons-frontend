@@ -1,0 +1,9 @@
+.search-result.enchanted .search-details {
+    box-shadow: inset 6px 1px 120px #e4f8ff,
+                inset -6px 0px 120px #ceecf6,
+                -1px 1px 1px 1px #ccc;
+}
+
+.search-result.enchanted .result-details__title-header {
+    color: #6262d2;
+}
