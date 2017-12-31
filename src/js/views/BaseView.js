@@ -33,8 +33,23 @@ export default class BaseView {
         }
     }
 
-    _updateElement(selector, html) {
+    _replaceInnerElement(selector, html) {
         const el = document.querySelector(selector);
-        el.innerHTML = html;
+        if (el) {
+            el.innerHTML = html;
+            return el;
+        } else {
+            console.warn(`BaseView._replaceInnerElement() failed, could not find element '${selector}'`);
+        }
+    }
+
+    _replaceElement(selector, html) {
+        const el = document.querySelector(selector);
+        if (el) {
+            el.outerHTML = html;
+            return el;
+        } else {
+            console.warn(`BaseView._replaceElement() failed, could not find element '${selector}'`);
+        }
     }
 }

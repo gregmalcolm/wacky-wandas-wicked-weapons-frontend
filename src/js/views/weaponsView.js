@@ -1,5 +1,6 @@
 import pageHtml from "../templates/weapons.html.js";
 
+import resultHtml from "../templates/weapons/_result.html.js";
 import resultsHtml from "../templates/weapons/_results.html.js";
 
 import BaseView from "./BaseView.js"
@@ -16,6 +17,9 @@ export default class WeaponsView extends BaseView {
             case "weaponsChanged":
                 this._renderWeapons(...args);
                 break;
+            case "weaponChanged":
+                this._renderWeapon(...args);
+                break;
         }
     }
 
@@ -24,9 +28,14 @@ export default class WeaponsView extends BaseView {
     }
 
     _renderWeapons(weapons) {
-        this._updateElement(".weapon-results", resultsHtml(weapons));
+        this._replaceInnerElement(".weapon-results", resultsHtml(weapons));
 
         this._registerResultsEvents(weapons);
+    }
+
+    _renderWeapon(weapon) {
+        const selector = `.search-result[data-id='${weapon.id}']`;
+        this._replaceElement(selector, resultHtml(weapon));
     }
 
     _registerResultsEvents(weapons) {

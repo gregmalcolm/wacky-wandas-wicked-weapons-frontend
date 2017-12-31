@@ -86,7 +86,7 @@ export default class Weapon extends Model {
     }
     set enchanted(enchanted) {
         this._enchanted = enchanted;
-        this.collection.notify("enchantmentChange", this);
+        this.collection.notifyView("weaponChanged", this);
     }
 
     rangeText() {

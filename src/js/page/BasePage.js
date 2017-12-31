@@ -6,8 +6,8 @@ export default class BasePage {
 
     updateApp(pageName) {
         if (pageName) {
-            window.app.controllers[pageName] = this.controller;
-            window.app.views[pageName] = this.view;
+            window.app.controllers[`${pageName}Controller`] = this.controller;
+            window.app.views[`${pageName}View`] = this.view;
         }
     }
 }
