@@ -1,9 +1,6 @@
 import pageHtml from "../templates/weapons.html.js";
 
-import resultHtml from "../templates/weapons/_result.html.js";
-import resultsInfoHtml from "../templates/weapons/_resultsInfo.html.js";
-import loadingHtml from "../templates/weapons/_loading.html.js";
-import criticalFailureHtml from "../templates/weapons/_criticalFailure.html.js";
+import resultsHtml from "../templates/weapons/_results.html.js";
 
 import BaseView from "./BaseView.js"
 
@@ -24,44 +21,29 @@ export default class WeaponsView extends BaseView {
 
     render() {
         super.render();
-
-        this._updateElement(".weapons-header", loadingHtml());
     }
 
     _renderWeapons(weapons) {
-        this._updateElement(".weapons-header", resultsInfoHtml(weapons));
+        this._updateElement(".weapon-results", resultsHtml(weapons));
+
+        this._registerResultsEvents(weapons);
+    }
+
+    _registerResultsEvents(weapons) {
         if (weapons.items.length > 0) {
-            this._updateElement(".weapons-footer", resultsInfoHtml(weapons));
-        } else {
-            this._updateElement(".weapons-footer", criticalFailureHtml());
+            this._registerEvent(".btn-prev", "click", () => {
+                this.controller.prevPage();
+            });
+
+            this._registerEvent(".btn-next", "click", () => {
+                this.controller.nextPage();
+            });
+
+            this._registerEvent(".buy-button", "click", (e) => {
+                const searchResultEl = e.target.closest(".search-result");
+                const weaponId = searchResultEl.getAttribute("data-id");
+                this.controller.buy(weaponId);
+            })
         }
-
-        const html = this._buildResultsHtml(weapons.items);
-        this._updateElement(".weapons-list", html);
-
-        this._registerResultsEvents();
-    }
-
-    _registerResultsEvents() {
-        this._registerEvent(".btn-prev", "click", () => {
-            this.controller.prevPage();
-        });
-
-        this._registerEvent(".btn-next", "click", () => {
-            this.controller.nextPage();
-        });
-
-        this._registerEvent(".buy-button", "click", (e) => {
-            const searchResultEl = e.target.closest(".search-result");
-            const weaponId = searchResultEl.getAttribute("data-id");
-            this.controller.buy(weaponId);
-        })
-    }
-
-    _buildResultsHtml(weapons) {
-        return weapons.reduce((acc, weapon) => {
-            acc = acc + resultHtml(weapon);
-            return acc;
-        }, "");
     }
 }

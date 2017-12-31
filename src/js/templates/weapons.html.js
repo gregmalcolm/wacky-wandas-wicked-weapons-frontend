@@ -1,7 +1,9 @@
-const resultTemplate = () => `
-    <header class="weapons-header"></header>
-    <ul class="weapons-list"></ul>
-    <footer class="weapons-footer"></footer>
+import loadingHtml from "./weapons/_loading.html.js";
+
+const weaponsTemplate = () => `
+    <section class="weapon-results">
+        ${loadingHtml()}
+    </section>
 `;
 
-export default resultTemplate;
+export default weaponsTemplate;
