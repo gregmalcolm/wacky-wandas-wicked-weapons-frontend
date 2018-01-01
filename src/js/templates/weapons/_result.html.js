@@ -1,9 +1,15 @@
 const resultTemplate = (weapon) => `
-    <li class="search-result" data-id="${weapon.id}">
+    <li class="search-result ${weapon.enchanted ? "enchanted" : ""}" data-id="${weapon.id}">
         <div class="search-details">
             <h3 class="result-details__title-header">
                 ${weapon.name}
             </h3>
+            <div class="search-result__enchanted">
+              <label>Add enchantment
+                <input class="enchantment-checkbox" type="checkbox"
+                  ${weapon.enchanted ? "checked" : ""}>
+                </label>
+            </div>
             <img class="search-result__image" src="${weapon.imageUrl}" alt="${weapon.name}">
             <dl class="result_details__info__specifics">
                 <dt>Costs:</dd>
@@ -17,6 +23,7 @@ const resultTemplate = (weapon) => `
                 <dt>Weight:</dt>
                 <dd>${weapon.weight} lb</dd>
             </dl>
+
             <button class="buy-button" type="button">Buy!</button>
         </div>
     </li>

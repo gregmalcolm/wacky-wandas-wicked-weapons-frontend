@@ -51,17 +51,35 @@ export default class WeaponsView extends BaseView {
             });
 
             this._registerEvent(".buy-button", "click", (e) => {
-                const searchResultEl = e.target.closest(".search-result");
-                const weaponId = searchResultEl.getAttribute("data-id");
-                this.controller.buy(weaponId);
+                const id = this._findId(e.target);
+                this.controller.buy(id);
             })
+
+            this._registerEvent(".enchantment-checkbox", "click", (e) => {
+                const id = this._findId(e.target);
+                const state = e.target.checked;
+                this.controller.enchant(id, state);
+            });
         }
     }
 
     _registerWeaponEvents(weapon) {
-        const buttonSelector = `.search-result[data-id='${weapon.id}'] .buy-button`;
-        this._registerEvent(buttonSelector, "click", (e) => {
+        const parentSelector = `.search-result[data-id='${weapon.id}']`;
+
+        const buyButtonSelector = `${parentSelector} .buy-button`;
+        this._registerEvent(buyButtonSelector, "click", (e) => {
             this.controller.buy(weapon.id);
         })
+
+        const enchantmentSelector = `${parentSelector} .enchantment-checkbox`;
+        this._registerEvent(enchantmentSelector, "click", (e) => {
+            const state = e.target.checked;
+            this.controller.enchant(weapon.id, state);
+        });
+    }
+
+    _findId(srcEl) {
+        const searchResultEl = srcEl.closest(".search-result");
+        return searchResultEl.getAttribute("data-id");
     }
 }
