@@ -19,6 +19,8 @@ export default class WeaponsPage extends BasePage {
         this.controller.cart = new CartItemsCollection(this.view);
 
         this.updateApp("weapons");
+
+        window.app.models.weapons = this.controller.weapons
     }
 
     transition(params) {

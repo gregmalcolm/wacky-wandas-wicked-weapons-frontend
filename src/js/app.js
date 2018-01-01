@@ -7,7 +7,8 @@ window.app = {
     router: null,
     pages: {},
     views: {},
-    controllers: {}
+    controllers: {},
+    models: {}
 };
 app.router = new Router();
 

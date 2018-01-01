@@ -15,6 +15,7 @@ export default class ItemsPage extends BasePage {
         this.controller.cart = new CartItemsCollection(this.view);
 
         this.updateApp("items");
+        window.app.models.cart = this.controller.cart
     }
 
     transition(params) {
