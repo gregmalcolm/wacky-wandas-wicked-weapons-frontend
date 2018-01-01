@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%= require('html-loader!./src/html/_head.html') %>
+    <meta charset="UTF-8">
+    <title>Wacky Wanda's Wicked Weapons</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body class="container">
     <header>
-        <%= require('html-loader!./src/html/_header.html') %>
+        <div class="header-upper">
+            <h1 class="header-upper__header">
+                <img class="header-upper__logo-face" alt="wanda's face" src="/images/wandas-face.png">
+                <span class="header-upper__title">Wacky Wanda's Wicked Weapons</span>
+            </h1>
+        </div>
+        <nav class="navbar" role="navigation">
+            <ul class="navbar__list">
+                <li class="navbar__li-buttons"><a href="/#/">Home</a></li>
+                <li class="navbar__li-buttons"><a href="/#/weapons">Weapons</a></li>
+                <li class="navbar__li-pay"><a href="/#/items">$$$</a></li>
+                <li class="navbar__li-search">
+                    <form class="weapons-search">
+                        <input class="weapons-search__input" type="text" name="q" placeholder="Weapons search">
+                    </form>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main class="content">
     </main>
-    <footer>
-        <%= require('html-loader!./src/html/_footer.html') %>
-    </footer>
 </body>
 </html>
