@@ -2,7 +2,6 @@ var path = require('path');
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
 const createLodashAliases = require('lodash-loader').createLodashAliases
 
 module.exports = {
@@ -61,7 +60,6 @@ module.exports = {
     new HtmlWebpackPlugin({
         path: path.resolve(__dirname, 'dist'),
         template: './index.html',
-    }),
-    new HtmlWebpackExcludeAssetsPlugin()
+    })
   ]
 };
