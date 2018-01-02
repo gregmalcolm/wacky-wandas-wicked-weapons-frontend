@@ -61,7 +61,7 @@ export default class WeaponsController extends BaseController {
             query.push(`like_name=${params.q}`);
         }
         if (params.page) {
-            query.push(`page[number]=${params.page}`);
+            query.push(`page=${params.page}`);
         }
         return query.join("&");
     }
