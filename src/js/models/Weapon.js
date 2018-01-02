@@ -70,7 +70,9 @@ export default class Weapon extends Model {
     }
 
     get weight() {
-        return this._enchanted && this._weight ? this._weight * 1.2 : this._weight;
+        return this._enchanted && this._weight
+            ? (this._weight * 1.2).toFixed(1)
+            : this._weight;
     }
     set weight(weight) {
         this._weight = weight;
@@ -102,17 +104,17 @@ export default class Weapon extends Model {
     }
 
     costInCoins() {
-        if (this._cost >= 100) {
-            return this._cost/100;
+        if (this.cost >= 100) {
+            return this.cost/100;
         } else if (this.cost >= 10){
-            return this._cost/10;
+            return this.cost/10;
         } else {
-            return this._cost;
+            return this.cost;
         }
     }
 
     costCurrency() {
-        if (this._cost >= 100) {
+        if (this.cost >= 100) {
             return "gp";
         } else if (this.cost >= 10){
             return "sp";
