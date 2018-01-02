@@ -55,7 +55,7 @@ export default class WeaponsView extends BaseView {
             this._registerEvent(".buy-button", "click", (e) => {
                 const id = this._retrieveId(e.target);
                 this.controller.buy(id);
-            })
+            });
         }
     }
 
@@ -70,17 +70,18 @@ export default class WeaponsView extends BaseView {
         this._registerEvent(buyButtonSelector, "click", (e) => {
             this.controller.buy(weapon.id);
         })
+
+        const enchantmentSelector = `.enchantment-checkbox`;
+        this._registerEvent(enchantmentSelector, "click", (e) => {
+            const state = e.target.checked;
+            this.controller.enchant(weapon.id, state);
+        });        
     }
 
     // this._registerEvent(".enchantment-checkbox", "click", (e) => {
     //     const id = this._findId(e.target);
     //     const state = e.target.checked;
     //     this.controller.enchant(id, state);
-    // });
-    // const enchantmentSelector = `.enchantment-checkbox`;
-    // this._registerEvent(enchantmentSelector, "click", (e) => {
-    //     const state = e.target.checked;
-    //     this.controller.enchant(weapon.id, state);
     // });
 
 }
