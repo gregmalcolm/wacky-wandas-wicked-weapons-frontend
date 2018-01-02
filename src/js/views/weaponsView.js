@@ -1,3 +1,4 @@
+import AdPropogator from '../../../public/js/AdPropogator.js';
 import pageHtml from "../templates/weapons.html.js";
 
 import resultHtml from "../templates/weapons/_result.html.js";
@@ -16,6 +17,7 @@ export default class WeaponsView extends BaseView {
         switch(event) {
             case "weaponsChanged":
                 this._renderWeapons(...args);
+                AdPropogator();
                 break;
             case "weaponChanged":
                 this._renderWeapon(...args);
@@ -64,8 +66,7 @@ export default class WeaponsView extends BaseView {
 
     _registerWeaponEvents(weapon) {
         const parentSelector = `.search-result[data-id='${weapon.id}']`;
-
-        const buyButtonSelector = `${parentSelector} .buy-button`;
+        const buyButtonSelector = `.buy-button`;
         this._registerEvent(buyButtonSelector, "click", (e) => {
             this.controller.buy(weapon.id);
         })
@@ -76,7 +77,7 @@ export default class WeaponsView extends BaseView {
     //     const state = e.target.checked;
     //     this.controller.enchant(id, state);
     // });
-    // const enchantmentSelector = `${parentSelector} .enchantment-checkbox`;
+    // const enchantmentSelector = `.enchantment-checkbox`;
     // this._registerEvent(enchantmentSelector, "click", (e) => {
     //     const state = e.target.checked;
     //     this.controller.enchant(weapon.id, state);

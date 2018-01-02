@@ -2,8 +2,7 @@ import '../css/style.css';
 import '../css/header.css';
 import '../css/head-spin.css';
 
-import Router from './Router.js'
-
+import Router from './Router.js';
 window.app = {
     router: null,
     pages: {},
