@@ -1,11 +1,14 @@
-.errors-frame h3 {
+.errors-frame {
     text-align: center;
 }
 
 .errors-frame img {
-    width: 100%;
+    max-width: 100%;
 }
 
-.errors-frame .footer-text {
-    text-align: center;
+/* > tablet */
+@media (min-width: 769px) {
+    .errors-frame img {
+        max-width: 796px;
+    }
 }

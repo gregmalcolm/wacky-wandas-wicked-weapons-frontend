@@ -15,6 +15,12 @@
 }
 
 .welcome img {
-    width: 50%;
+    width: 100%;
 }
 
+/* > 2 tiles */
+@media (min-width: 673px) {
+    .welcome img {
+        max-width: 673px;
+    }
+}
