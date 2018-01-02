@@ -1,5 +1,5 @@
 const resultTemplate = (weapon) => `
-    <li class="search-result" data-id="${weapon.id}">
+    <li class="search-result ${weapon.enchanted ? "enchanted" : ""}" data-id="${weapon.id}">
         <div class="search-details">
             <h3 class="result-details__title-header">
                 ${weapon.name}
@@ -20,15 +20,12 @@ const resultTemplate = (weapon) => `
 
             <button class="buy-button" type="button">Buy!</button>
             <!--
-                <div class="search-result__enchanted">
+            <div class="search-result__enchanted">
                 <label>Add enchantment
                     <input class="enchantment-checkbox" type="checkbox"
                         ${weapon.enchanted ? "checked" : ""}>
                 </label>
             </div>
-            -->
-            <!--
-                <li class="search-result ${weapon.enchanted ? "enchanted" : ""}" data-id="${weapon.id}">
             -->
         </div>
     </li>
