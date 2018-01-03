@@ -74,11 +74,11 @@
 .column {
     display: inline-block;
 }
-    
+
 .navbar .navbar__li-search {
     width: 100%;
 }
-    
+
 
 .navbar .weapons-search {
     display: flex;
@@ -92,21 +92,6 @@
     display: inline-block;
     width: 100%;
     vertical-align: middle;
-}
-
-@keyframes small-bounce {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-25px);
-  }
-}
-
-@-webkit-keyframes somersault {
-    0% { transform: translateY(0px) rotate(0deg) scale(1); }
-    50% { transform: translateY(-20px) rotate(-180deg) scale(2); }
-    100% { transform: translateY(0px) rotate(-360deg) scale(1); }
 }
 
 /* > large mobile */
@@ -135,7 +120,7 @@
     .navbar .navbar__li-search {
         width: inherit;
     }
-    
+
     .navbar .weapons-search {
         width: inherit;
     }
