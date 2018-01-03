@@ -14,8 +14,13 @@ https://github.com/gregmalcolm/wacky-wandas-wicked-weapons-api
 
 There are 2 important branches:
 
-##### fix-it - the code in a purposefully “broken” state
-##### solution - the code with all corrections in place
+#### Branch: fix-it 
+
+The code in a purposefully “broken” state
+
+#### Branch: solution
+
+The code with all corrections in place
 
 Setup
 -----
