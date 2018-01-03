@@ -18,6 +18,9 @@ There are 2 important branches:
 
 The code in a purposefully “broken” state
 
+Note: This branch is subject to rebasings from solutions branch whenever
+something changes.
+
 #### Branch: solution
 
 The code with all corrections in place
