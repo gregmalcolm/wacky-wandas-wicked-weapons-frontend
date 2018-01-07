@@ -20,12 +20,11 @@ const resultTemplate = (weapon) => `
 
             <button class="buy-button" type="button">Buy!</button>
             <!--
-            <div class="search-result__enchanted">
-                <label>Add enchantment
-                    <input class="enchantment-checkbox" type="checkbox"
-                        ${weapon.enchanted ? "checked" : ""}>
-                </label>
-            </div>
+            <label class="search-result__enchanted">
+                Add enchantment
+                <input class="enchantment-checkbox" type="checkbox"
+                    ${weapon.enchanted ? "checked" : ""}>
+            </label>
             -->
         </div>
     </li>
