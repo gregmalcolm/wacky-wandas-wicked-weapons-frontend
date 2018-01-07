@@ -63,6 +63,11 @@ export default class WeaponsView extends BaseView {
         }
     }
 
+    _findId(srcEl) {
+        const searchResultEl = srcEl.closest(".search-result");
+        return searchResultEl.getAttribute("data-id");
+    }
+
     _registerWeaponEvents(weapon) {
         const parentSelector = `.search-result[data-id='${weapon.id}']`;
 
@@ -76,10 +81,5 @@ export default class WeaponsView extends BaseView {
             const state = e.target.checked;
             this.controller.enchant(weapon.id, state);
         });
-    }
-
-    _findId(srcEl) {
-        const searchResultEl = srcEl.closest(".search-result");
-        return searchResultEl.getAttribute("data-id");
     }
 }
