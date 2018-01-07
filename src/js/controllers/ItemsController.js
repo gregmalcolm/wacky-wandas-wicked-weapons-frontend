@@ -12,7 +12,7 @@ export default class ItemsController extends BaseController {
         } else if (numericQuantity > 0 ) {
             this.cart.updateItemQuantity(weaponId, numericQuantity);
         } else {
-            console.info(`ItemsController updateCartItemQuantity(): Ignoring quantity of "${quantity}"`);
+            console.log(`ItemsController updateCartItemQuantity(): Ignoring quantity of "${quantity}"`);
         }
     }
 }

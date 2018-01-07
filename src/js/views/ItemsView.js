@@ -57,7 +57,7 @@ export default class ItemsView extends BaseView {
             subtotalValueEl.innerHTML =
                 `${cart.calculateTotalInCoins()} <span class="currency-${cart.getTotalCurrency()}">${cart.getTotalCurrency()}</span>`;
         } else {
-            console.info("ItemsView tried to update the subtotal text but failed");
+            console.log("ItemsView tried to update the subtotal text but failed");
         }
     }
 

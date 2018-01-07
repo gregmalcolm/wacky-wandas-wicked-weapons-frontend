@@ -29,7 +29,7 @@ export default class BaseView {
                 els.forEach((el) => el.addEventListener(et, callback))
             );
         } else {
-            console.info(`Can't find element needed for an event ${selector}`);
+            console.log(`Can't find element needed for an event ${selector}`);
         }
     }
 

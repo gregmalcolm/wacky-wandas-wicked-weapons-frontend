@@ -35,7 +35,7 @@ export default class Router {
     }
 
     routeTo(route, params) {
-        console.info("Routing: route:", route, "params:", params);
+        console.log("Routing: route:", route, "params:", params);
         this.page = this._findPage(route);
         this.page.transition(params || {});
     }
