@@ -66,16 +66,16 @@ export default class WeaponsView extends BaseView {
 
     _registerWeaponEvents(weapon) {
         const parentSelector = `.search-result[data-id='${weapon.id}']`;
+        const enchantmentSelector = `${parentSelector} .enchantment-checkbox`;
+        this._registerEvent(enchantmentSelector, "click", (e) => {
+            const state = e.target.checked;
+            this.controller.enchant(weapon.id, state);
+        });
+
         const buyButtonSelector = `.buy-button`;
         this._registerEvent(buyButtonSelector, "click", (e) => {
             this.controller.buy(weapon.id);
         })
-
-        const enchantmentSelector = `.enchantment-checkbox`;
-        this._registerEvent(enchantmentSelector, "click", (e) => {
-            const state = e.target.checked;
-            this.controller.enchant(weapon.id, state);
-        });        
     }
 
     // this._registerEvent(".enchantment-checkbox", "click", (e) => {
