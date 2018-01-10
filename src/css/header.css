@@ -20,11 +20,13 @@
 }
 
 .navbar ul {
+    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    flex-wrap: wrap;
 }
 
 .navbar li a {
@@ -40,7 +42,7 @@
     margin: 8px;
     font-size: 24px;
     padding: 2px 2px;
-    width: 400px;
+    width: calc(100% - 20px);
     vertical-align: middle;
     border: 1px solid #ced4da;
     border-radius: .25rem;
@@ -63,16 +65,16 @@
 }
 
 .navbar__li-buttons {
-    float: left;
 }
 
 .navbar__li-search {
-    float: left;
-    width: 20px;
+    order: 4;
+    width: 100%;
 }
 
 .navbar__li-pay {
-    float: right;
+    margin-left: auto;
+    min-width: 80px;
 }
 
 .navbar__li-pay img {
@@ -84,24 +86,6 @@
     display: inline-block;
 }
 
-.navbar .navbar__li-search {
-    width: 100%;
-}
-
-
-.navbar .weapons-search {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    float: left;
-    width: 100%;
-}
-
-.navbar .weapons-search__input {
-    display: inline-block;
-    width: 100%;
-    vertical-align: middle;
-}
 
 /* > large mobile */
 @media (min-width: 451px) {
@@ -120,23 +104,22 @@
         animation: somersault 0.65s linear;
         cursor: pointer;
     }
+}
+
+/* > 2 tiles */
+@media (min-width: 673px) {
+    .navbar__li-pay {
+        margin-left: inherit;
+    }
 
     .navbar__li-search {
-        float: right;
-        width: inherit;
+        margin-left: auto;
+        width: 360px;
+        order: inherit;
     }
-
-    .navbar .navbar__li-search {
-        width: inherit;
-    }
-
-    .navbar .weapons-search {
-        width: inherit;
-    }
-
-
+    
     .navbar .weapons-search__input {
-        width: auto;
+        width: calc(100% - 20px);
     }
 }
 
