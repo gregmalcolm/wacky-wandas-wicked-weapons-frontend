@@ -1,8 +1,8 @@
 const errorsTemplate = () => `
     <div class="errors-frame">
-        <h3>Something went wrong</h3>
+        <h3>Boom</h3>
         <img src="/images/disappointed.jpg" alt="disappointed">
-        <div class="footer-text">Disappointing</div>
+        <div class="footer-text">Skimped on the unit tests, didn't ya?</div>
     </div>
 `;
 
