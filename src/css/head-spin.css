@@ -1,5 +1,5 @@
 .header-upper__logo-face:hover {
-    /* animation: somersault 0.2s ease-in-out;     */
+    animation: somersault 646.988ms cubic-bezier(0.44, 0.43, 0.65, 0.65) 0ms;
 }
 
 @-webkit-keyframes somersault {
