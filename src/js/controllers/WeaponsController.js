@@ -44,7 +44,9 @@ export default class WeaponsController extends BaseController {
     }
 
     enchant(weaponId, state) {
-        debugger;
+        const weapon = this.weapons.find(weaponId);
+
+        weapon.enchanted = state;
     }
 
     async _fetchWeaponsAsync(params) {

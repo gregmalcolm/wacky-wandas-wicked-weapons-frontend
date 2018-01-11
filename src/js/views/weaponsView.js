@@ -56,6 +56,12 @@ export default class WeaponsView extends BaseView {
                 const id = this._retrieveId(e.target);
                 this.controller.buy(id);
             });
+
+            this._registerEvent(".enchantment-checkbox", "click", (e) => {
+                const id = this._retrieveId(e.target);
+                const state = e.target.checked;
+                this.controller.enchant(id, state);
+            });
         }
     }
 

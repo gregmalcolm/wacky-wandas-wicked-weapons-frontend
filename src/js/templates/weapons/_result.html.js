@@ -4,6 +4,11 @@ const resultTemplate = (weapon) => `
             <h3 class="result-details__title-header">
                 ${weapon.name}
             </h3>
+            <label class="search-result__enchanted">
+                Add enchantment
+                <input class="enchantment-checkbox" type="checkbox"
+                    ${weapon.enchanted ? "checked" : ""}>
+            </label>
             <img class="search-result__image" src="${weapon.imageUrl}" alt="${weapon.name}">
             <dl class="result_details__info__specifics">
                 <dt>Costs:</dd>
@@ -20,11 +25,6 @@ const resultTemplate = (weapon) => `
 
             <button class="buy-button" type="button">Buy!</button>
             <!--
-            <label class="search-result__enchanted">
-                Add enchantment
-                <input class="enchantment-checkbox" type="checkbox"
-                    ${weapon.enchanted ? "checked" : ""}>
-            </label>
             -->
         </div>
     </li>
