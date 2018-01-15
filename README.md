@@ -6,7 +6,7 @@ This is a simple ES6 frontend used for demo purposes for the talk
 
 Speakerdeck:
 
-https://speakerdeck.com/gregmalcolm/chrome-dev-tools
+https://speakerdeck.com/gregmalcolm/chrome-dev-tools-raiding-the-armory
 
 It makes use of this backend:
 
