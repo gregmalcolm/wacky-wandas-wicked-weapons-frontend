@@ -28,7 +28,7 @@ The code with all corrections in place
 Setup
 -----
 
-Don’t forget to the start the API f
+Don’t forget to the start the API first
 
 ```
 npm install
