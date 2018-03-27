@@ -2,7 +2,7 @@
     /* animation: somersault 0.2s ease-in-out;     */
 }
 
-@-webkit-keyframes somersault {
+@keyframes somersault {
     0% { transform: translateY(0px) rotate(0deg) scale(1); }
     50% { transform: translateY(-20px) rotate(-180deg) scale(2); }
     100% { transform: translateY(0px) rotate(-360deg) scale(1); }
