@@ -7,8 +7,8 @@
 }
 
 /* > tablet */
-@media (min-width: 769px) {
+@media (min-width: 673px) {
     .errors-frame img {
-        max-width: 796px;
+        max-width: 673px;
     }
 }
