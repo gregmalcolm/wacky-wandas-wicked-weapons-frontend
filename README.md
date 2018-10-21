@@ -27,7 +27,8 @@ something changes.
 
 #### Branch: solution
 
-The code with all corrections in place
+The code with all corrections in place. I’m no longer maintaining it, so it 
+may be a little out of date.
 
 Setup
 -----
