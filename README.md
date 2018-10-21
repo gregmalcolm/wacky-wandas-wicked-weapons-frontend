@@ -4,6 +4,10 @@ Wacky Wanda’s Wicked Weapons
 This is a simple ES6 frontend used for demo purposes for the talk
 “Chrome Developer Tools: Raiding the Armory”
 
+Here is me giving the talk at Stir Trek 2018:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uTlXglapGdg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Speakerdeck:
 
 https://speakerdeck.com/gregmalcolm/chrome-dev-tools-raiding-the-armory
