@@ -27,7 +27,7 @@
     "lodash-loader": "^1.2.0",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.3"
+    "webpack-dev-server": "^3.1.11"
   },
   "dependencies": {
     "lodash": "^4.17.4"
