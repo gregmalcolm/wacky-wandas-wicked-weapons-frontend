@@ -36,6 +36,6 @@ Setup
 Don’t forget to the start the API first
 
 ```
-npm install
-npm run dev
+yarn install
+yarn run dev
 ```
